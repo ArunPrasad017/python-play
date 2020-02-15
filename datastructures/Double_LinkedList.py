@@ -14,6 +14,7 @@ class Node(object):
         if head is not None:
             head.prev = new_node
         head = new_node
+        return head
 
     def traverse_DLL(self,head):
         currentNode = head
@@ -33,5 +34,5 @@ c.next = None
 c.prev = b
 
 a.traverse_DLL(a)
-a.insertToFirst(a,0)
-a.traverse_DLL(a)
+x = a.insertToFirst(a,0)
+a.traverse_DLL(x)
