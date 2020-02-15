@@ -22,17 +22,18 @@ class Node(object):
             print(currentNode.value)
             currentNode = currentNode.next
 
-a = Node(1)
-b = Node(2)
-c = Node(3)
-
-a.next = b
-a.prev = None
-b.next = c
-b.prev = a
-c.next = None
-c.prev = b
-
-a.traverse_DLL(a)
-x = a.insertToFirst(a,0)
-a.traverse_DLL(x)
+if __name__ == "__main__":
+    a = Node(1)
+    b = Node(2)
+    c = Node(3)
+    
+    a.next = b
+    a.prev = None
+    b.next = c
+    b.prev = a
+    c.next = None
+    c.prev = b
+    
+    a.traverse_DLL(a)
+    new_head = a.insertToFirst(a,0)
+    a.traverse_DLL(new_head)
