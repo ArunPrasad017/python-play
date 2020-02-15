@@ -4,13 +4,13 @@ class Node(object):
         self.value = value
         self.next = None
 
-    def insert_Node_head(self,head,toInsert):
+    def insert_Node_toEnd(self,head,val_to_insert):
         currentNode = head
         while currentNode is not None:
-            if currentNode.next is not None:
-                currentNode.next = Node(toInsert)
+            if currentNode.next is None:
+                currentNode.next = Node(val_to_insert)
                 return head
-        currentNode = currentNode.next
+            currentNode = currentNode.next
 
 a = Node(1)
 b = Node(2)
@@ -28,5 +28,5 @@ def print_LinkedList(head):
 
 head = a
 print_LinkedList(a)
-a.insert_Node_head(a,5)
+a.insert_Node_toEnd(a,5)
 print_LinkedList(a)
