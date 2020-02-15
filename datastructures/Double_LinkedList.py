@@ -12,9 +12,8 @@ class Node(object):
         new_node.prev = None
 
         if head is not None:
-            self.head.prev = new_node
-        
-        self.head = new_node
+            head.prev = new_node
+        head = new_node
 
     def traverse_DLL(self,head):
         currentNode = head
