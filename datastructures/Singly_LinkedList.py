@@ -11,6 +11,21 @@ class Node(object):
                 currentNode.next = Node(val_to_insert)
                 return head
             currentNode = currentNode.next
+    
+    def delete_Node(self,head,val_to_delete):
+        currentNode = head
+        prevNode = None
+        while currentNode is not None:
+            if currentNode.value == val_to_delete:
+                if prevNode is None:
+                    newhead = currentNode.next
+                    currentNode.next = None
+                    return newhead
+                prevNode.next = currentNode.next
+                return head
+                
+            prevNode = currentNode
+            currentNode=currentNode.next
 
 a = Node(1)
 b = Node(2)
@@ -27,6 +42,9 @@ def print_LinkedList(head):
         currentNode=currentNode.next
 
 head = a
-print_LinkedList(a)
+print(head)
 a.insert_Node_toEnd(a,5)
+print_LinkedList(a)
+a.delete_Node(a,2)
+print("after")
 print_LinkedList(a)
