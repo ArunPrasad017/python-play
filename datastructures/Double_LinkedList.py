@@ -54,8 +54,6 @@ class Node(object):
             return head
 
 
-
-
 if __name__ == "__main__":
     a = Node(1)
     b = Node(2)
@@ -76,5 +74,5 @@ if __name__ == "__main__":
     a.inserttoPosition(new_head,2,5)
     a.traverse_DLL(new_head)
     print("---------------------")
-    a.deleteNode(new_head,2)
+    a.deleteNode(new_head,6)
     a.traverse_DLL(new_head)

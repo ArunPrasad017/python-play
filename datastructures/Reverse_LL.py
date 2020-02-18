@@ -29,6 +29,6 @@ b = Node(2)
 # Set up order a,b,c,d with values 1,2,3,4
 a.nextnode = b
 
-reverse(a)
+print(reverse(a))
 
 print (b.nextnode.value)
