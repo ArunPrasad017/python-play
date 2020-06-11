@@ -12,7 +12,7 @@ Output:
   "()()()"
 ]
 
-Solution: Uses the backtracking functionality
+Hint: Uses the backtracking functionality
 """
 import pytest
 def generateParenthesis(n):
