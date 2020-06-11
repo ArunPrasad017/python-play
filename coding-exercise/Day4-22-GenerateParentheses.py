@@ -15,6 +15,7 @@ Output:
 Hint: Uses the backtracking functionality
 """
 import pytest
+
 def generateParenthesis(n):
     res = []
     backtrack(res, "", opened=0,closed=0,size=n)
@@ -28,6 +29,9 @@ def backtrack(res,string,opened,closed,size):
     if closed<opened:
         backtrack(res,string+')',opened,closed+1,size)
 
+def test_generateParenthesis():
+    assert generateParenthesis(2) == ['(())','()()']
+    assert generateParenthesis(3) != ['((()))', '()()()()']
+
 n = 2
 print(generateParenthesis(n))
-

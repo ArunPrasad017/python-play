@@ -8,6 +8,7 @@ Output: True(Taco Cat - when we remove o we have the possibility of this being a
 Hint: Use dictionary
 """
 import string
+import pytest
 def palindrome_permutation(s):
     dict_string = {}
     for c in s:
@@ -22,6 +23,11 @@ def palindrome_permutation(s):
     if count>1:
         return False
     return True
+
+def test_palindrome_permutation():
+    assert palindrome_permutation("Taco Cat") == True
+    assert palindrome_permutation("Taco Bell") == False
+    assert palindrome_permutation("Coe! eco") == True
 
 s = "Taco Cat"
 print(palindrome_permutation(s))
