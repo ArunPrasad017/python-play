@@ -33,5 +33,3 @@ def test_isHappy():
 
 n = 19
 print(isHappy(n))
-
-test_isHappy()
