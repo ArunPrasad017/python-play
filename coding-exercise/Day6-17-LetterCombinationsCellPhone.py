@@ -23,5 +23,5 @@ def letterCombinations(digits):
         backtrack("", digits,output)
     return output
 
-digits = '23'
+digits = '234'
 print(letterCombinations(digits))
