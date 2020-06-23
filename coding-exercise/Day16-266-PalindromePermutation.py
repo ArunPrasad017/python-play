@@ -1,3 +1,11 @@
+"""
+Given a string, determine if a permutation of the string could form a palindrome.
+
+Input: "carerac"
+Output: true
+
+"""
+
     # Time limit Exceeded    
     #     def isPalindrome(s):
     #         return s == s[::-1]
