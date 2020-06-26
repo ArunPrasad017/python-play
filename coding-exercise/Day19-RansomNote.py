@@ -45,4 +45,15 @@ ransomNote = "aa"
 magazine = "aab"
 print(canConstruct(ransomNote,magazine))
 
-#single pass has table
+#single pass dictionary
+
+def canConstruct2(ransomNote, magazine):
+    dict_magazine = Counter(magazine)
+    for c in ransomNote:
+        count = dict_magazine[c]
+        if count ==0:
+            return False
+        dict_magazine[c]=(count-1)
+    return True
+
+canConstruct2(ransomNote,magazine)
