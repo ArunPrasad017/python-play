@@ -11,7 +11,7 @@ def oddEvenList(head):
     even = head.next
     evenhead = even
 
-    while even is not None and even.next is not None:
+    while evenhead is not None and evenhead.next is not None:
         odd.next = even.next
         odd = odd.next
         even.next = odd.next
