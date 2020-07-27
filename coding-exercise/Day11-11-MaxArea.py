@@ -9,7 +9,7 @@ def maxArea(height):
         max_val=max(max_val,area)
         if height[left]<=height[right]:
             left+=1
-        elif height[right]<height[left]:
+        else:
             right-=1
         n-=1
     return max_val

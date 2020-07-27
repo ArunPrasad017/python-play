@@ -42,7 +42,7 @@ class Node(object):
             if currentpos == position and currentNode.next:
                 prevNode.next = new_node
                 new_node.next = currentNode
-            elif currentNode.next == None:
+            elif currentNode.next is None:
                 currentNode.next = new_node
                 break
             prevNode = currentNode

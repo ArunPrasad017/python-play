@@ -7,10 +7,9 @@ class Node(object):
 
 def cycle_check(node):
     head_node = node
-    while node is not None:
-        if node.nextnode == head_node:
+    while head_node is not None:
+        if head_node.nextnode == head_node:
             return True
-            break
         node=node.nextnode
     return False
 

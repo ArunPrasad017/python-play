@@ -25,10 +25,7 @@ def minRemoveToMakeValid(s):
         else:
             stack.pop()
     remove_set = remove_set.union(set(stack))
-    string = []
-    for i,c in enumerate(s):
-        if i not in remove_set:
-            string.append(c)
+    string = [c for i,c in enumerate(s) if i not in remove_set]
     return "".join(string)
 
 s = "(a(b(((c)d)"

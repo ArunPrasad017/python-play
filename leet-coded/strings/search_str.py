@@ -13,8 +13,7 @@
 import collections
 def topKFrequent(words, k):
     counter = collections.Counter(words)
-    output = sorted(counter.keys(), key = lambda x: (-counter[x],x) )
-    return output
+    return sorted(counter.keys(), key = lambda x: (-counter[x],x) )
 
 words = ["i", "love", "leetcode", "i", "love", "coding"]
 k = 2

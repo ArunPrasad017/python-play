@@ -15,16 +15,15 @@ def addStrings(num1, num2):
         num1 = num1[:-1]
         num2 = num2[:-1]
 
-    if num1 or num2 or carry:
-        if num1:
-            str_val= str(int(num1)+carry)+str_val
-            return str_val
-        if num2:
-            str_val= str(int(num2)+carry)+str_val
-            return str_val
-        if carry:
-            str_val=str(carry)+str_val
-            return str_val
+    if num1:
+        str_val= str(int(num1)+carry)+str_val
+        return str_val
+    if num2:
+        str_val= str(int(num2)+carry)+str_val
+        return str_val
+    if carry:
+        str_val=str(carry)+str_val
+        return str_val
     return str_val
 
 assert_equal(addStrings("9","99"),"108")

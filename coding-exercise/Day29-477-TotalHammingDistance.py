@@ -2,7 +2,6 @@ def totalHammingDistance(nums):
     if len(nums)==0:
         return 0
     n = len(nums)
-    ans = 0
     lst = [0]*31
     for num in nums:
         i =0
@@ -10,9 +9,7 @@ def totalHammingDistance(nums):
             lst[i] += num&1
             num>>=1
             i+=1
-    for k in lst:
-        ans+=(k*(n-k))
-    return ans
+    return sum((k*(n-k)) for k in lst)
 
 # method2
 def totalHammingDistance_leetcode(nums):

@@ -9,13 +9,13 @@ def isValid(s):
         '[':']',
         '{':'}'
     }
-    
+
     for char in s:
         is_balanced = False
-        if char in dict_balanced.keys():
+        if char in dict_balanced:
             stack.append(char)
         elif char in dict_balanced.values():
-            if(len(stack)==0):
+            if not stack:
                 return False
             else:
                 item = stack[len(stack)-1]
@@ -26,9 +26,7 @@ def isValid(s):
                     is_balanced=False
                 if(is_balanced):
                     stack =stack[:len(stack)-1]
-    if(len(stack))==0:
-        return True
-    else:return False
+    return (len(stack))==0
 
 
 if __name__ == "__main__":

@@ -25,13 +25,13 @@ def removeKthToLast(k,head):
     fast = dummyNode
     dummyNode.next = head
 
-    for i in range(0,k):
+    for _ in range(k):
         fast = fast.next
-    
+
     while fast.next!=None:
         slow = slow.next
         fast = fast.next
-    
+
     return slow.next.data
 
 

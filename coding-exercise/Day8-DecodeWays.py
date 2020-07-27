@@ -13,7 +13,7 @@ Hint: Use the bottom up processing technique and iteratively find the answer
 def numDecodings(s):
     if not s:
         return 0
-    dp = [0 for _ in range(0,len(s)+1)]
+    dp = [0 for _ in range(len(s)+1)]
     dp[0] =1
 
     dp[1] =0 if s[0] == '0' else 1

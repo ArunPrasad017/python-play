@@ -12,8 +12,8 @@ def dfs(board,i,j,word):
 def exist(board, word):
     A = len(board)
     B = len(board[0])
-    for i in range (0,A):
-        for j in range(0,B):
+    for i in range(A):
+        for j in range(B):
             if dfs(board,i,j,word):
                 return True
     return False

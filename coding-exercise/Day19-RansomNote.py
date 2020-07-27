@@ -36,10 +36,7 @@ def canConstruct(ransomNote, magazine):
     dict_ransom = Counter(ransomNote)
     dict_magazine = Counter(magazine)
 
-    for k,v in dict_ransom.items():
-        if dict_magazine[k] < v:
-            return False
-    return True
+    return all(dict_magazine[k] >= v for k,v in dict_ransom.items())
 
 ransomNote = "aa"
 magazine = "aab"

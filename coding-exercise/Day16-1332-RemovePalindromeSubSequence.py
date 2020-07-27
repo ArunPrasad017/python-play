@@ -14,13 +14,11 @@ Explanation: String is already palindrome
 def removePalindromeSub(s):
     if len(s)==0:
         return 0
-    left = 0 
     right = len(s)-1
 
-    while left<right:
+    for left in range(right):
         if s[left]!=s[right]:
             return 2
-        left+=1
         right-=1
     return 1
 

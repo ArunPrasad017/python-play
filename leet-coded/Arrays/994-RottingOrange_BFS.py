@@ -11,7 +11,7 @@ def orangesRotting(grid):
                 rotten_set.add(str(i)+str(j))
     mins = 0
     directions = [(0,1), (1,0), (-1,0), (0,-1)]
-    while len(fresh_set)>0:
+    while fresh_set:
         infected_set = set()
         for s in rotten_set:
             i = int(s[0])
@@ -23,7 +23,7 @@ def orangesRotting(grid):
                 if val in fresh_set:
                     fresh_set.remove(val)
                     infected_set.add(val)
-        if len(infected_set)==0:
+        if not infected_set:
             return -1
         rotten_set = infected_set
         mins+=1

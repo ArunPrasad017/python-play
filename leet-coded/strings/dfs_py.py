@@ -12,8 +12,8 @@ def numDistinctIslands(grid):
     if not grid or len(grid)==0:
         return 0
     numislands = 0
-    for i in range(0, len(grid)):
-        for j in range(0,len(grid[0])):
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
             if (grid[i][j] == 1):
                 numislands+=dfs(grid,i,j)
     return numislands

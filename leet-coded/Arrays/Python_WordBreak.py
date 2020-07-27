@@ -11,7 +11,7 @@ def word_break(s, wordDict):
     dp = [False for _ in range(length+1)]
     dp[0] = True
 
-    for i in range(0,length):
+    for i in range(length):
         for j in range(i+1,length+1):
             if dp[i]==True and s[i:j] in wordSet:
                 dp[j]=True

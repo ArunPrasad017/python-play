@@ -12,5 +12,5 @@ T = int(input())
 len_str = int(input())
 str1 = input()
 
-for i in range(T,0,-1):
+for _ in range(T,0,-1):
     print(check_palindrome(str1))

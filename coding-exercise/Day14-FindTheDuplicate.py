@@ -21,10 +21,10 @@ def findDuplicate_set(nums):
     # with set and time:o(n) 
     # and space:O(n)
     nums_set=set()
-    for i in range(0,len(nums)):
-        if nums[i] in nums_set:
-            return nums[i]
-        nums_set.add(nums[i])
+    for num in nums:
+        if num in nums_set:
+            return num
+        nums_set.add(num)
 
 
 def findDuplicate_cycle(nums):

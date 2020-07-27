@@ -16,13 +16,8 @@ def palindrome_permutation(s):
             dict_string[c.lower()] = 1
         elif ord(c.lower()) in range(97,123):
             dict_string[c.lower()]+=1
-    count =0
-    for k,v in dict_string.items():
-        if v%2==1:
-            count+=1
-    if count>1:
-        return False
-    return True
+    count = sum(1 for k,v in dict_string.items() if v%2==1)
+    return count <= 1
 
 def test_palindrome_permutation():
     assert palindrome_permutation("Taco Cat") == True

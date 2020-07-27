@@ -10,18 +10,15 @@ If the robot returns to the origin after it finishes all of its moves, return tr
 def judgeCircle(moves):
     origin = [0,0]
     for c in moves:
-        if c=='U':
-            origin[0]+=1
-        elif c=='D':
+        if c == 'D':
             origin[0]-=1
-        elif c=='R':
-            origin[1]+=1
-        elif c=='L':
+        elif c == 'L':
             origin[1]-=1
-    if origin[0]==0 and origin[1]==0:
-        return True
-    else:
-        return False
+        elif c == 'R':
+            origin[1]+=1
+        elif c == 'U':
+            origin[0]+=1
+    return origin[0]==0 and origin[1]==0
 
 string = "RRDD"
 print(judgeCircle(string))

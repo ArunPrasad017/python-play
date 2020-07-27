@@ -4,11 +4,7 @@ def countCharacters(words,chars):
     str_length = 0
     for word in words:
         word_dict = collections.Counter(word)
-        status = True
-        for i in word_dict:
-            if word_dict[i]>dict_chars[i]:
-                status = False
-                break
+        status = all(word_dict[i] <= dict_chars[i] for i in word_dict)
         if status:
             str_length+=len(word)
     return str_length
