@@ -19,7 +19,7 @@ class Solution:
                 for i in range(2,len(word)):
                     if ord(word[i]) not in range(65,91):
                         return False
-            elif is_first_cap and not is_second_cap:
+            elif is_first_cap:
                 for i in range(2,len(word)):
                     if ord(word[i]) not in range(97,123):
                         return False
@@ -27,6 +27,4 @@ class Solution:
                 for i in range(1, len(word)):
                     if ord(word[i]) not in range(97,123):
                         return False
-            return True
-        else:
-            return True
+        return True
