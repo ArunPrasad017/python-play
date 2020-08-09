@@ -35,14 +35,14 @@ class Solution:
         self.min_val,self.max_val = 0, 0
         
         def dfs(node,r,c):
-            if node == None:return
+            if node is None:return
             if c in cache:
                 cache[c].append([r,node.val])
             else:
                 cache[c]= [[r, node.val]]
             self.min_val = min(self.min_val,c)
             self.max_val = max(self.max_val,c)
-            
+
             dfs(node.left,r+1,c-1)
             dfs(node.right,r+1,c+1)
         
