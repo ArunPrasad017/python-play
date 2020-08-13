@@ -1,9 +1,7 @@
 class Solution:
     def titleToNumber(self, s: str) -> int:
-        cnt = 0
         dict1 = {}
-        for i in range(65,91):
-            cnt+=1
+        for cnt, i in enumerate(range(65,91), start=1):
             dict1[chr(i)] = cnt
         sum_val = 0
         s = s[::-1]
