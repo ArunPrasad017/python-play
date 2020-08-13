@@ -1,9 +1,7 @@
 class Solution:
     def countUnivalSubtreesRec(self, node):
         def hasChild(node):
-            if node.right or node.left:
-                return True
-            return False
+            return bool(node.right or node.left)
         if node.left is None and node.right is None:
             self.count+=1
             return self.count
