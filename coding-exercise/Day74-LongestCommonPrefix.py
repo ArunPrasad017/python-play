@@ -7,7 +7,7 @@ Input: ["flower","flow","flight"]
 Output: "fl"
 """
 
-def longestCommonPrefix(self, strs: List[str]) -> str:
+def longestCommonPrefix(strs):
     if not(strs):
         return ""
     strs = sorted(strs)
