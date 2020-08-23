@@ -16,5 +16,10 @@ def reverseWords(s):
     q.appendleft(''.join(word))
     return ' '.join(q)
 
+
+def reverseWordsOneLiner(s):
+    return ' '.join(s.split()[::-1])
+
 s= "a good   example"
 print(reverseWords(s))
+print(reverseWordsOneLiner(s))
