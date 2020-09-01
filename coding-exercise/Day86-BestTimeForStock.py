@@ -37,3 +37,12 @@ def maxProfitCtr(prices):
 
 lst = [7,1,5,3,6,4]
 print(maxProfitCtr(lst))
+
+
+def isAnagram(s,t):
+    dict1 = Counter()
+    for c in s:
+        dict1[c]+=1
+    for c in t:
+        dict1[c]-=1
+    return all(val==0 for val in dict1.values())
