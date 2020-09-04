@@ -48,7 +48,7 @@ def mergeStrings(s1, s2):
         elif (ord(s1[ptr1]) <= ord(s2[ptr2])) and (dict1[s1[ptr1]] == dict2[s2[ptr2]]):
             res+=str(s1[ptr1])
             ptr1+=1
-        elif (ord(s1[ptr1]) > ord(s2[ptr2])) and (dict1[s1[ptr1]] == dict2[s2[ptr2]]):
+        elif dict1[s1[ptr1]] == dict2[s2[ptr2]]:
             res+=str(s2[ptr2])
             ptr2+=1
     if ptr2!=len(s2)-1 or len(s2)==1:
