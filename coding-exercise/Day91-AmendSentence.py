@@ -16,10 +16,7 @@ def amendTheSentence(s):
     res=""
     for i,c in enumerate(s):
         if ord(c) in range(65,92):
-            if i!=0:
-                res+=str(" " +c.lower())
-            else:
-                res+=c.lower()
+            res += str(" " +c.lower()) if i!=0 else c.lower()
         else:
             res+=c
     return res
