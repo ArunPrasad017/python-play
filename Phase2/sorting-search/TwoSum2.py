@@ -1,4 +1,4 @@
-def twoSum(self, nums, target):
+def twoSum(nums, target):
     left,right = 0,len(nums)-1
     while left<right:
         sum_val = nums[left]+nums[right]
