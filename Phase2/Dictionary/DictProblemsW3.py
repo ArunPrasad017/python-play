@@ -41,8 +41,7 @@ def remove_key_from_dict(dict1, x):
     return dict1
 
 def map_two_list_dict(l1,l2):
-    dict1 = dict(zip(l1,l2))
-    return dict1
+    return dict(zip(l1,l2))
 
 def max_min_dict():
     dic1={1:10, 2:20}
