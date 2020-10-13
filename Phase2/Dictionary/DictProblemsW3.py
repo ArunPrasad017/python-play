@@ -89,10 +89,63 @@ def count(lst):
 # print(lst_to_nested_dict(lst))
 
 # sort a dict based on values
-dict1 = {'b':100, 'c':200, 'f':1000, 'd':100,'a':1000}
-dict2 = dict(sorted(dict1.items(),key=operator.itemgetter(1)))
-# dict2 = {x: sorted(y) for x,y in dict1.items()}
-print(dict2)
+# dict1 = {'b':100, 'c':200, 'f':1000, 'd':100,'a':1000}
+# dict2 = dict(sorted(dict1.items(),key=operator.itemgetter(1)))
+# # dict2 = {x: sorted(y) for x,y in dict1.items()}
+# print(dict2)
+
+# num = {'n1': [2, 3, 1], 'n2': [5, 1, 2], 'n3': [3, 2, 4]}
+# sorted_dict = {x:sorted(y) for x,y in num.items()}
+# print(sorted_dict)
+
+# student_list = {'S  001': ['Math', 'Science'], 'S    002': ['Math', 'English']}
+# dict_student = {}
+# for k,v in student_list.items():
+#     new_key = k.replace(' ','')
+#     dict_student[new_key] = v
+# print(dict_student)
+
+# import heapq
+# items = {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}
+# for name in (heapq.nlargest(3,items,key=items.get)):
+#     print(name, items[name])
+
+# dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+# count = 0
+# for k,v in dict_num.items():
+#     count+=1
+#     print(str(k)+'->'+ str(v) + '->'+str(count))
+
+# above same as here
+# dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+# for count, (k, v) in enumerate(dict_num.items(), start=1):
+#     print(str(k)+'->'+ str(v) + '->'+str(count))
+
+# from collections import Counter
+# dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+# new_dict = Counter(dict_num)
+# print(new_dict.most_common())
+
+# # 
+# dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+# avg = (sum(dict_num.values()) / len(dict_num))
+# for k,v in dict_num.items():
+#     dict_num[k]=avg
+# print(dict_num)
+
+from collections import defaultdict
+d= defaultdict(list)
+for i,c in enumerate(list('xyz')):
+    n = (i+1)*10
+    d[c] = [n+i for i in range(1,10)]
+print(dict(d))
+for k, v in d.items():
+    print(v[4])
+for k, v in d.items():
+    print("{} has value {}".format(k,v))
+
+    
+
 
 ##################################################################################################################################
 #####function calls
