@@ -187,3 +187,26 @@ for k, v in d.items():
 
 # print(count(lst))
 
+# set operation refreshers
+new_set1 = set([3,4,5,6])
+new_set2 = set([1,2,3,4])
+print(new_set1.intersection(new_set2))
+print(new_set1.union(new_set2))
+print(new_set1.symmetric_difference(new_set2))
+print(new_set1.difference(new_set2))
+print(new_set1.issubset(new_set2))
+print(max(new_set1))
+print(new_set1.isdisjoint(new_set2))
+print("\n")
+set1 = set2 = set()
+set1.add(1)
+print(set1)
+print(set2)
+# clear all
+set1.clear()
+print("\n")
+x = frozenset([1, 2, 3, 4, 5])
+y = frozenset([3, 4, 5, 6, 7])
+print(x.issubset(y))
+print(x.isdisjoint(y))
+print(x.symmetric_difference(y))
