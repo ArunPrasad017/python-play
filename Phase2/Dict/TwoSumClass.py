@@ -25,7 +25,8 @@ class TwoSum:
                 return True
         return False
         
-
+res =[]
+res.insert()
 
 # Your TwoSum object will be instantiated and called as such:
 # obj = TwoSum()
