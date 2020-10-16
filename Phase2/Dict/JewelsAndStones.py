@@ -1,12 +1,9 @@
 from collections import Counter
 def numJewelsInStones(J,S):
-        res = 0
         if J==S:
             return len(J)
         cntr = Counter(S)
-        for c in J:
-            res+=cntr[c]
-        return res
+        return sum(cntr[c] for c in J)
 
 J = "aA"
 S = "aAAbbbb"
