@@ -2,12 +2,10 @@ def canAttendMeetings(intervals):
     if not intervals:
         return True
     intervals.sort(key=lambda x:x[0])
-    i=1
-    while i<len(intervals):
-        if intervals[i][0]<intervals[i-1][1]:
-            return False
-        i+=1
-    return True
+    return all(
+        intervals[i][0] >= intervals[i - 1][1]
+        for i in range(1, len(intervals))
+    )
 
 lst = [[0,30],[5,10],[15,20]]
 print(canAttendMeetings(lst))
