@@ -1,7 +1,7 @@
 from collections import Counter
 import heapq
 if __name__ == '__main__':
-    s = 'qwertyuiopasdfghjklzxcvbnm'
+    s = 'aabbbccde'
     d=Counter()
     for c in s:
         d[c]+=1
