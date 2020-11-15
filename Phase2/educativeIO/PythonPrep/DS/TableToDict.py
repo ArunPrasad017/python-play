@@ -114,3 +114,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+Solution to the programs from DB
+# solution 2
+# SELECT e1.*
+# from employee e1
+# left join employee e2
+# on e1.employee_id = e2.employee_id
+# and e1.effective_date<e2.effective_date
+# where e2.effective_date is null 
+
+# solution 1
+# -- as per the details provided in question 1 employee profile change = 1 entry in the effective date column under the same employee group
+# select e.employee_id, count(effective_date) as cnt_profile_change
+# from employee e
+# GROUP by e.employee_id
+# having count(effective_date)>=2
+"""
