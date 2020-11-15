@@ -37,12 +37,8 @@ print(rearrange([-1, 2, -3, -4, 5]))
 def rearrange(lst):
     # Write your code here
     left_most_pos = 0
-    i=0
-    while i<len(lst):
-        if lst[i]>0:
-            i+=1
-        else:
+    for i in range(len(lst)):
+        if lst[i] <= 0:
             lst[i],lst[left_most_pos]=lst[left_most_pos],lst[i]
             left_most_pos+=1
-            i+=1
     return lst
