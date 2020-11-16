@@ -2,7 +2,7 @@ def validMountainArray(arr):
     i=0
     while i<len(arr)-1 and arr[i+1]>arr[i]:
         i+=1
-    if i==len(arr)-1 or i==0:
+    if i in [len(arr) - 1, 0]:
         return False
     while i<len(arr)-1 and arr[i+1]<arr[i]:
         i+=1

@@ -6,9 +6,7 @@ def check_arr(arr):
             return True
         if v==0:
             zero_cnt+=1
-    if zero_cnt>1:
-        return True
-    return False
+    return zero_cnt>1
 
 arr = [10,2,5,3]
 print(check_arr(arr))
