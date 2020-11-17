@@ -16,4 +16,4 @@ def weighted_strings(num):
             continue
     return res
 
-print(weighted_strings(25))
+print(weighted_strings(200))
