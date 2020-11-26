@@ -16,9 +16,9 @@ def search(nums,left,right,target):
     n = len(nums)
     if n==0: 
         return -1
-    if 
     while left<=right:
         pivot = (left+right)//2
+    # if
 
         if nums[pivot] == target:
             return pivot
