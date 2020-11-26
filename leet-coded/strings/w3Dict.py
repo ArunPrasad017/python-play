@@ -1,5 +1,6 @@
 import operator
 def dict_test():
+    ""
     # 1. to sort (ascending and descending) a dictionary by value
     # dict1 = {1: 20, 2: 30,0: 10}
     # dict2 = dict(sorted(dict1.items(), key = operator.itemgetter(1)))
