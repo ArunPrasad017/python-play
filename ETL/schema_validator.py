@@ -1,6 +1,7 @@
 import pyodbc
 import logging
 import traceback
+
 class CheckSchema:
     def __init__(self,table,connection_cfg):
         self.table = table

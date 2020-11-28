@@ -1,8 +1,7 @@
-from schema_checker import check_schema_table
-from schema_checker import CheckSchema
-from schema_checker import UpdateSchema
-
+from ETL.update_schema import UpdateSchema
+from ETL.schema_validator import CheckSchema
 from configparser import ConfigParser
+
 class ETL_Executor:
     def __init__(self,config,env,connector_config):
         self.config = ConfigParser(config)
@@ -22,6 +21,12 @@ class ETL_Executor:
             if is_changed:
                 changed_columns_list,curr_schema = schema_validator.changed_columns
                 update_schema(table,changed_columns_list,curr_schema,self.connector)
+
+    def execute_etl_operations(self):
+        """
+        Execute the final functions required to load into the final schema of the tables 
+        """
+        pass
 
 def main():
     # assuming this above config file is a temp file which contains 
