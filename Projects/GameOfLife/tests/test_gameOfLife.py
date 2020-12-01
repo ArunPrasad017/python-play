@@ -4,7 +4,7 @@
 import sys
 import os
 
-from src.gameOfLife import GameOfLife
+from Projects.GameOfLife.src.gameOfLife import GameOfLife
 
 test_obj=GameOfLife(3,1)
 
@@ -16,4 +16,4 @@ def test_game_of_life():
 
 # failure case of test
 def test_game_of_life_failure():
-    assert test_obj.play()==[[0, 0, 1], [1, 0, 1], [0, 0, 0]]
+    assert test_obj.play() != [[0, 0, 1], [1, 0, 1], [0, 0, 0]]
