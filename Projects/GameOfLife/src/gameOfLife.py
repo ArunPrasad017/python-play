@@ -25,9 +25,10 @@ class GameOfLife:
         self.grid = [[0] * self.rows for i in range(self.cols)]
         for i in range(self.rows):
             for j in range(self.cols):
-                if i in ((self.rows//2)-1,self.rows//2,(self.rows//2)+1) and \
-                    j in ((self.cols//2)-1,(self.cols//2)+1):
-                    self.grid[i][j]=1
+                tuple1 = ((self.rows // 2) - 1, self.rows // 2, (self.rows // 2) + 1)
+                tuple2 = ((self.cols // 2) - 1, (self.cols // 2) + 1)
+                if i in tuple1 and j in tuple2:
+                    self.grid[i][j] = 1
         return self.grid
 
     def show_grid(self):
