@@ -10,24 +10,27 @@ Ex:
 
 -- [6,2,1,5,4,3,0]
 """
+
+
 def nextPermutation(nums):
-    def swap(nums,a,b):
+    def swap(nums, a, b):
         nums[a], nums[b] = nums[b], nums[a]
 
-    def reverse(nums,i):
+    def reverse(nums, i):
         nums[i:] = nums[i:][::-1]
 
-    k = len(nums)-2
-    while k>=0 and nums[k] >= nums[k+1]:
-        k-=1
-    if k>=0:
-        j = len(nums)-1
-        while j>=0 and nums[j] <= nums[k]:
-            j-=1
-        swap(nums,k,j)
-    reverse(nums,k+1)
-    
+    k = len(nums) - 2
+    while k >= 0 and nums[k] >= nums[k + 1]:
+        k -= 1
+    if k >= 0:
+        j = len(nums) - 1
+        while j >= 0 and nums[j] <= nums[k]:
+            j -= 1
+        swap(nums, k, j)
+    reverse(nums, k + 1)
+
     return nums
 
-nums =  [1,5,1]
+
+nums = [1, 5, 1]
 print(nextPermutation(nums))

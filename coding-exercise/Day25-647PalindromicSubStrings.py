@@ -15,13 +15,13 @@ Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
 # def palindromicSubString(s):
 #     count = 0
 #     for i in range(len(s)):
-#         j = i 
+#         j = i
 #         k = i
 #         while j>=0 and k<len(s) and s[k] == s[j]:
 #             count+=1
 #             j-=1
 #             k+=1
-#         j = i 
+#         j = i
 #         k = i+1
 #         while j>=0 and k<len(s) and s[k] == s[j]:
 #             count+=1
@@ -30,25 +30,25 @@ Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
 #     return count
 
 
-
 def palindromicSubString(s):
     count = 0
     N = len(s)
-    dp = [[0]* N for _ in range(N)]
+    dp = [[0] * N for _ in range(N)]
 
-    for i in range(0,len(s)):
+    for i in range(0, len(s)):
         dp[i][i] = 1
-        count+=1
-    for col in range(1,len(s)):
+        count += 1
+    for col in range(1, len(s)):
         for row in range(col):
-             if (row == col-1 and s[col] == s[row]):
-                 dp[row][col] = 1
-                 count+=1
-             elif (dp[row+1][col-1] ==1 and s[col] == s[row]):
-                 dp[row][col] = 1
-                 count+=1
+            if row == col - 1 and s[col] == s[row]:
+                dp[row][col] = 1
+                count += 1
+            elif dp[row + 1][col - 1] == 1 and s[col] == s[row]:
+                dp[row][col] = 1
+                count += 1
     print(dp)
     return count
 
-s = 'aaa'
+
+s = "aaa"
 print(palindromicSubString(s))

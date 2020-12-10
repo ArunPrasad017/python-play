@@ -1,5 +1,5 @@
 def maxProductSubarray(nums):
-    # we use kadane's algorithm to solve this and 
+    # we use kadane's algorithm to solve this and
     # this algorithm is an extension of dynamic programming
 
     if len(nums) == 1:
@@ -9,18 +9,19 @@ def maxProductSubarray(nums):
     current_prod = nums[0]
     min_prod = nums[0]
 
-    for i in range(1,len(nums)):
-        if nums[i]<0:
+    for i in range(1, len(nums)):
+        if nums[i] < 0:
             temp = current_prod
             current_prod = min_prod
             min_prod = temp
 
-        current_prod = max((current_prod*nums[i]), nums[i])
-        min_prod = min((min_prod*nums[i]), nums[i])
+        current_prod = max((current_prod * nums[i]), nums[i])
+        min_prod = min((min_prod * nums[i]), nums[i])
 
         max_prod = max(current_prod, max_prod)
 
     return max_prod
 
-nums = [-4,-3,-2]
+
+nums = [-4, -3, -2]
 print(maxProductSubarray(nums))

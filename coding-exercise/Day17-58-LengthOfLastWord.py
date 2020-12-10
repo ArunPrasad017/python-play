@@ -7,12 +7,14 @@ If the last word does not exist, return 0.
 Note: A word is defined as a maximal substring consisting of non-space characters only.
 """
 
+
 def lengthOfLastWord(s):
     lst = s.strip().split(" ")
-    if len(lst)>=1:
+    if len(lst) >= 1:
         return len(lst[-1])
     return 0
 
+
 # s = "H      "
-s = 'Hello World'
+s = "Hello World"
 print(lengthOfLastWord(s))

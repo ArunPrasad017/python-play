@@ -29,6 +29,8 @@ class Node:
 """
 # Approach 1 - with extra space for the queue implementation
 from collections import deque
+
+
 def connect(root):
     if root is None:
         return None
@@ -37,13 +39,14 @@ def connect(root):
         size = len(q)
         for i in range(size):
             node = q.popleft()
-            if i<size-1:
+            if i < size - 1:
                 node.next = q[0]
             if node.left:
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
     return root
+
 
 # approach2 - without extra space
 def connectNoSpace(root):
@@ -54,13 +57,10 @@ def connectNoSpace(root):
         head = leftmost
         while head:
             # connection type 1
-            head.left.next=head.right
+            head.left.next = head.right
             # connection type 2
             if head.next:
                 head.right.next = head.next.left
             head = head.next
-        leftmost=leftmost.left
+        leftmost = leftmost.left
     return root
-            
-
-

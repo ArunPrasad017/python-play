@@ -1,26 +1,28 @@
 from collections import defaultdict
+
+
 class Solution:
 
     WHITE = 1
     GRAY = 2
     BLACK = 3
 
-    def findOrder(self,numCourses, prerequisites):
-        adjlist = defaultdict(list) 
+    def findOrder(self, numCourses, prerequisites):
+        adjlist = defaultdict(list)
 
         # A pair [a,b] in the input represents edge from b-->a
-        for dest,src in prerequisites:
+        for dest, src in prerequisites:
             adjlist[src].append(dest)
-        topological_sorted=[]
+        topological_sorted = []
         is_possible = True
-        color = {k:Solution.WHITE for k in range(numCourses)}
+        color = {k: Solution.WHITE for k in range(numCourses)}
 
         def dfs(node):
             nonlocal is_possible
 
             if not is_possible:
                 return
-            
+
             color[node] = Solution.GRAY
             if node in adjlist:
                 for n in adjlist[node]:
@@ -38,7 +40,7 @@ class Solution:
         return topological_sorted
 
 
-n= 4
-prereq= [[1,0],[2,0],[3,1],[3,2]]
+n = 4
+prereq = [[1, 0], [2, 0], [3, 1], [3, 2]]
 p1 = Solution()
-print(p1.findOrder(n,prereq))
+print(p1.findOrder(n, prereq))

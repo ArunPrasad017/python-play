@@ -1,18 +1,17 @@
 class Node(object):
-
-    def __init__(self,value):
+    def __init__(self, value):
         self.value = value
         self.next = None
 
-    def insert_Node_toEnd(self,head,val_to_insert):
+    def insert_Node_toEnd(self, head, val_to_insert):
         currentNode = head
         while currentNode is not None:
             if currentNode.next is None:
                 currentNode.next = Node(val_to_insert)
                 return head
             currentNode = currentNode.next
-    
-    def delete_Node(self,head,val_to_delete):
+
+    def delete_Node(self, head, val_to_delete):
         currentNode = head
         prevNode = None
         while currentNode is not None:
@@ -25,16 +24,16 @@ class Node(object):
                 prevNode.next = currentNode.next
                 return head
             prevNode = currentNode
-            currentNode=currentNode.next
-    
-    def insert_Node(self,head,val_to_Insert,position):
+            currentNode = currentNode.next
+
+    def insert_Node(self, head, val_to_Insert, position):
         currentNode = head
         prevNode = None
         currentpos = 0
         new_node = Node(val_to_Insert)
         if not head:
             head = new_node
-        if position==0:
+        if position == 0:
             currentNode.next = head
             head = new_node
             return head
@@ -47,7 +46,8 @@ class Node(object):
                 break
             prevNode = currentNode
             currentNode = currentNode.next
-            currentpos+=1
+            currentpos += 1
+
 
 a = Node(1)
 b = Node(2)
@@ -61,7 +61,8 @@ def print_LinkedList(head):
     currentNode = head
     while currentNode is not None:
         print(currentNode.value)
-        currentNode=currentNode.next
+        currentNode = currentNode.next
+
 
 head = a
 print(head)
@@ -71,5 +72,5 @@ print(head)
 # print("after")
 # print_LinkedList(a)
 
-a.insert_Node(a,5,3)
+a.insert_Node(a, 5, 3)
 print_LinkedList(a)

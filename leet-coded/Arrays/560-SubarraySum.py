@@ -8,20 +8,22 @@
 #         i+=1
 #     return cnt
 
-def subarraysum(nums,n):
-    sum_dict = {0:1}
+
+def subarraysum(nums, n):
+    sum_dict = {0: 1}
     count = 0
     sum_val = 0
     for num in nums:
-        sum_val+=num
-        if (sum_val-n) in sum_dict:
-            count+=sum_dict[sum_val-n]
+        sum_val += num
+        if (sum_val - n) in sum_dict:
+            count += sum_dict[sum_val - n]
         if sum_val in sum_dict:
-            sum_dict[sum_val]+=1
+            sum_dict[sum_val] += 1
         else:
-            sum_dict[sum_val]=1
+            sum_dict[sum_val] = 1
     return count
 
-nums = [1,2,3]
+
+nums = [1, 2, 3]
 k = 3
-print(subarraysum(nums,k))
+print(subarraysum(nums, k))

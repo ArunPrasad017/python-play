@@ -1,4 +1,4 @@
-#dynamic array test
+# dynamic array test
 """
 import sys
 n = 50
@@ -12,8 +12,8 @@ for i in range(n):
 import ctypes
 import sys
 
-class DynamicArray(object):
 
+class DynamicArray(object):
     def __init__(self):
         self.n = 0
         self.capacity = 1
@@ -21,22 +21,21 @@ class DynamicArray(object):
 
     def __len__(self):
         return self.n
-    
-    def __getitem__(self,k):
+
+    def __getitem__(self, k):
         if not 0 <= k < self.n:
-            return IndexError('K is out of bounds')
+            return IndexError("K is out of bounds")
 
         return self.A[k]
 
-    
-    def append(self,elmnt):
-        if self.n ==self.capacity:
-            self._resize(2*self.capacity)  # 2x if capacity is not enough
-        
-        self.A[self.n]=elmnt
-        self.n+=1
+    def append(self, elmnt):
+        if self.n == self.capacity:
+            self._resize(2 * self.capacity)  # 2x if capacity is not enough
 
-    def _resize(self,newcap):
+        self.A[self.n] = elmnt
+        self.n += 1
+
+    def _resize(self, newcap):
         B = self.make_array(newcap)
 
         for k in range(self.n):
@@ -45,8 +44,8 @@ class DynamicArray(object):
             self.A = B
             self.capacity = newcap
 
-    def make_array(self,newcap):
-        return(newcap * ctypes.py_object)()
+    def make_array(self, newcap):
+        return (newcap * ctypes.py_object)()
 
 
 arr = DynamicArray()

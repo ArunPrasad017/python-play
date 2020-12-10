@@ -5,16 +5,18 @@
 #         self.left = left
 #         self.right = right
 
-def traverse(root,res):
+
+def traverse(root, res):
     if root.left:
-        traverse(root.left,res)
+        traverse(root.left, res)
     res.append(root.val)
     if root.right:
-        traverse(root.right,res)
-      
+        traverse(root.right, res)
+
+
 def inorderTraversal(root):
     if not root:
         return []
     res = []
-    traverse(root,res)
+    traverse(root, res)
     return res

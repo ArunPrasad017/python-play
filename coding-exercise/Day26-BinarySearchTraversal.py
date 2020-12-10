@@ -11,46 +11,52 @@ res = [
   [3]
 ]
 """
-class Node():
-    def __init__(self,val):
+
+
+class Node:
+    def __init__(self, val):
         self.left = None
         self.right = None
         self.val = val
 
+
 from collections import deque
+
+
 def printLevelOrder(root):
     if root is None:
         return
-    
+
     queue = []
     queue.append(root)
 
-    while (len(queue)>0):
+    while len(queue) > 0:
         print(queue[0].val)
         node = queue.pop(0)
 
         if node.left is not None:
             queue.append(node.left)
-        
+
         if node.right is not None:
             queue.append(node.right)
+
 
 def printReverseOrder(root):
     if root is None:
         return
-    
+
     queue = []
     stack = deque()
     queue.append(root)
 
-    while (len(queue)>0):
+    while len(queue) > 0:
         # print(queue[0].val)
         node = queue.pop(0)
         stack.append(node.val)
 
         if node.right is not None:
             queue.append(node.right)
-        
+
         if node.left is not None:
             queue.append(node.left)
     stack.reverse()
@@ -61,7 +67,7 @@ def printReverseOrder(root):
 # def levelOrderBottom(root):
 #     if root is None:
 #         return
-    
+
 #     res = []
 #     queue = deque()
 #     queue.append(root)
@@ -95,8 +101,8 @@ def levelOrderBottom(root):
                 next_nodes.append(node.right)
         nodes = next_nodes
     return res[::-1]
-    
-    
+
+
 if __name__ == "__main__":
     root = Node(1)
     root.left = Node(2)

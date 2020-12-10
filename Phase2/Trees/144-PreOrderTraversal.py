@@ -8,7 +8,7 @@ def preOrder(root):
     if root is None:
         return None
     stack = [root]
-    res =[]
+    res = []
     while stack:
         node = stack.pop()
         res.append(node.val)
@@ -17,4 +17,3 @@ def preOrder(root):
         if node.left:
             stack.append(node.right)
     return res
-

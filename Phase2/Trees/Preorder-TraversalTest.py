@@ -5,29 +5,33 @@
 #         self.left = left
 #         self.right = right
 
- #Preorder recursive
-def traverse(node,res):
+# Preorder recursive
+def traverse(node, res):
     res.append(node.val)
     if node.left:
-        traverse(node.left,res)
+        traverse(node.left, res)
     if node.right:
-        traverse(node.right,res)
+        traverse(node.right, res)
 
-def preorderTraversal(root):
-    res =[]
-    if not root:
-        return res
-    traverse(root,res)
-    return res
 
-#iterative
 def preorderTraversal(root):
     res = []
     if not root:
         return res
-    stack =[root,]
+    traverse(root, res)
+    return res
+
+
+# iterative
+def preorderTraversal(root):
+    res = []
+    if not root:
+        return res
+    stack = [
+        root,
+    ]
     while stack:
-        root=stack.pop()
+        root = stack.pop()
         if root is not None:
             res.append(root.val)
             if root.right is not None:

@@ -7,22 +7,25 @@ Explanation: You could delete the character 'c'.
 
 Hint: Used two pointer technique
 """
-def isPalindrome(s,a,b):
-    while a<b:
-        if s[a]!=s[b]:
+
+
+def isPalindrome(s, a, b):
+    while a < b:
+        if s[a] != s[b]:
             return False
-        a+=1
-        b-=1
+        a += 1
+        b -= 1
     return True
+
 
 def validPalindrome(s):
     left = 0
-    right = len(s)-1
-    while left<right:
-        if s[left]!=s[right]:
-            return (isPalindrome(s,left+1,right) or isPalindrome(s,left,right-1))
-        left+=1
-        right-=1
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return isPalindrome(s, left + 1, right) or isPalindrome(s, left, right - 1)
+        left += 1
+        right -= 1
     return True
 
 

@@ -16,19 +16,22 @@
 #         return lst2+l[cnt:]
 #     return l
 
+
 def merge(l):
-    if len(l)<=1:
+    if len(l) <= 1:
         return l
-    l.sort(key = lambda x:x[0])
-    i =1
-    while i<len(l):
-        if l[i][0] <= l[i-1][1]:
-            l[i-1][0] = min(l[i][0],l[i-1][0])
-            l[i-1][1] = max(l[i][1],l[i-1][1])
+    l.sort(key=lambda x: x[0])
+    i = 1
+    while i < len(l):
+        if l[i][0] <= l[i - 1][1]:
+            l[i - 1][0] = min(l[i][0], l[i - 1][0])
+            l[i - 1][1] = max(l[i][1], l[i - 1][1])
             l.pop(i)
-        else: i+=1
+        else:
+            i += 1
     return l
 
+
 # intervals = [[1,3],[2,6],[8,10],[15,18]]
-intervals = [[1,4],[0,2],[3,5]]
+intervals = [[1, 4], [0, 2], [3, 5]]
 print(merge(intervals))

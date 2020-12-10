@@ -1,10 +1,12 @@
 from collections import Counter
+
+
 def canPermutePalindrome(s):
-    d=Counter()
+    d = Counter()
     for c in s:
-        d[c]+=1
-    cnt = sum((v%2) for k,v in d.items())
-    return cnt<=1
+        d[c] += 1
+    cnt = sum((v % 2) for k, v in d.items())
+    return cnt <= 1
 
 
 s = "code"
