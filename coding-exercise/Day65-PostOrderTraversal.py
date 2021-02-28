@@ -5,21 +5,26 @@
 #         self.left = left
 #         self.right = right
 
+
 class RecSolution:
     def recurse(node):
         if node is None:
             return []
         return recurse(node.left) + recurse(node.right) + [node.val]
+
     def postOrder(root):
         if root is None:
             return None
         return recurse(root)
 
+
 class NonRecSolution(node):
     def postOrder(root):
         if root is None:
             return None
-        stack = [root,]
+        stack = [
+            root,
+        ]
         res = []
         while stack:
             root = stack.pop()

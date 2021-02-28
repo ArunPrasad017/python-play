@@ -17,12 +17,13 @@ The sum of the numbers to the left of index 3 (nums[3] = 6) is equal to the sum 
 Also, 3 is the first index where this occurs.
 """
 
+
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         leftsum = 0
         total = sum(nums)
-        for i,num in enumerate(nums):
-            if leftsum== total-num-leftsum:
+        for i, num in enumerate(nums):
+            if leftsum == total - num - leftsum:
                 return i
-            leftsum+=num
+            leftsum += num
         return -1

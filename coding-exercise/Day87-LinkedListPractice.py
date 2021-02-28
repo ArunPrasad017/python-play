@@ -7,13 +7,15 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
+
     def printList(self):
         temp = self.head
         while temp:
-            print('{} ->'.format(temp.val),end=" ")
+            print("{} ->".format(temp.val), end=" ")
             temp = temp.next
         print()
 
@@ -27,17 +29,19 @@ class LinkedList:
             currNode = nextNode
         self.head = prevNode
 
+
 def removeNthFromEnd(head, n):
     dummyNode = ListNode(0)
     dummyNode.next = head
-    slow_ptr =fast_ptr = dummyNode
+    slow_ptr = fast_ptr = dummyNode
     for _ in range(n):
-        fast_ptr=fast_ptr.next
+        fast_ptr = fast_ptr.next
     while fast_ptr.next is not None:
-        slow_ptr=slow_ptr.next
-        fast_ptr=fast_ptr.next
+        slow_ptr = slow_ptr.next
+        fast_ptr = fast_ptr.next
     slow_ptr.next = slow_ptr.next.next
     return dummyNode.next
+
 
 def removeElements(head, val):
     sentinel = ListNode(0)
@@ -47,9 +51,10 @@ def removeElements(head, val):
         if curr.val == val:
             prev.next = curr.next
         else:
-            prev=curr
-        curr=curr.next
+            prev = curr
+        curr = curr.next
     return sentinel.next
+
 
 def oddEvenShift(head):
     odd, even = head, head.next
@@ -59,9 +64,10 @@ def oddEvenShift(head):
         odd.next = even.next
         odd = odd.next
         even = odd.next
-        even =  even.next
+        even = even.next
     odd.next = evenhead
     return head
+
 
 def isPalindrome(head):
     # easy method
@@ -69,7 +75,7 @@ def isPalindrome(head):
     while head:
         lst.append(head.val)
         head = head.next
-    return lst==lst[::-1]
+    return lst == lst[::-1]
 
 
 # driver code
@@ -92,7 +98,7 @@ def main():
     # 1. remove from end
     # removeNthFromEnd(llist.head, 2)
 
-    #2. Reverse a LL
+    # 2. Reverse a LL
     # print(reverseList(llist.head))
     # llist.reverseList()
 
@@ -100,12 +106,13 @@ def main():
     # removeElements(llist.head, 30)
 
     # 4 Switch even and odd locations
-    # oddEvenShift(llist.head) # this causes cyclic while 
+    # oddEvenShift(llist.head) # this causes cyclic while
     # print("After")
     # llist.printList()
 
     # 5 Palindromic Linked List
     print(isPalindrome(llist.head))
-    
+
+
 if __name__ == "__main__":
     main()

@@ -14,8 +14,9 @@ The coins can form the following rows:
 Because the 3rd row is incomplete, we return 2
 """
 
+
 def arrangeCoins(n):
-    # brute force 
+    # brute force
     # cnt = 0
     # i = 1
     # while i<=n:
@@ -27,17 +28,18 @@ def arrangeCoins(n):
     # using the binary search and math method
     left = 0
     right = n
-    while left<=right:
-        k = (left+right)//2
-        current = (k*(k+1))//2
+    while left <= right:
+        k = (left + right) // 2
+        current = (k * (k + 1)) // 2
         if current == n:
             return k
-        if n<current:
-            right = k-1
+        if n < current:
+            right = k - 1
         else:
-            left = k+1
+            left = k + 1
     return right
-        
+
+
 n1 = 5
 n2 = 8
 print(arrangeCoins(n2))

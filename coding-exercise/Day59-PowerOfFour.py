@@ -1,9 +1,9 @@
 def isPowerOfFour(self, num: int) -> bool:
-    if num==1:
+    if num == 1:
         return 1
-    if num<=0:
+    if num <= 0:
         return 0
-    return (num & (num-1))==0 and (num%3)==1
+    return (num & (num - 1)) == 0 and (num % 3) == 1
     # counter =0
     # n=num
     # while num>1:

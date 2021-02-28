@@ -12,21 +12,23 @@ For s = "Hello", the output should be
 amendTheSentence(s) = "hello".
 
 """
-def amendTheSentence(s):
-    res=""
-    for i,c in enumerate(s):
-        if ord(c) in range(65,92):
-            res += str(" " +c.lower()) if i!=0 else c.lower()
-        else:
-            res+=c
-    return res
-            
+
 
 def amendTheSentence(s):
-    res=""
-    for i,c in enumerate(s):
-        if ord(c) in range(65,92):
-            res += str(" " +c.lower()) if i!=0 else c.lower()
+    res = ""
+    for i, c in enumerate(s):
+        if ord(c) in range(65, 92):
+            res += str(" " + c.lower()) if i != 0 else c.lower()
         else:
-            res+=c
+            res += c
+    return res
+
+
+def amendTheSentence(s):
+    res = ""
+    for i, c in enumerate(s):
+        if ord(c) in range(65, 92):
+            res += str(" " + c.lower()) if i != 0 else c.lower()
+        else:
+            res += c
     return res

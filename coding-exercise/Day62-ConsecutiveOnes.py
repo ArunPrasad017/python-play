@@ -11,13 +11,14 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 
 """
 
+
 def findMaxConsecutiveOnes(nums):
-    max_cnt,count = 0,0
+    max_cnt, count = 0, 0
     for num in nums:
         if num == 1:
-            count+=1
+            count += 1
         else:
-            max_cnt=max(max_cnt, count)
+            max_cnt = max(max_cnt, count)
             count = 0
-    max_cnt=max(max_cnt, count)
+    max_cnt = max(max_cnt, count)
     return max_cnt

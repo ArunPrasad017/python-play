@@ -32,23 +32,24 @@ class Solution:
         if root is None:
             return result
         cache = {}
-        self.min_val,self.max_val = 0, 0
-        
-        def dfs(node,r,c):
-            if node is None:return
-            if c in cache:
-                cache[c].append([r,node.val])
-            else:
-                cache[c]= [[r, node.val]]
-            self.min_val = min(self.min_val,c)
-            self.max_val = max(self.max_val,c)
+        self.min_val, self.max_val = 0, 0
 
-            dfs(node.left,r+1,c-1)
-            dfs(node.right,r+1,c+1)
-        
-        dfs(root,0,0)
-        for c in range(self.min_val, self.max_val+1):
-            col = sorted(cache[c], key=lambda x:(x[0], x[1]))
+        def dfs(node, r, c):
+            if node is None:
+                return
+            if c in cache:
+                cache[c].append([r, node.val])
+            else:
+                cache[c] = [[r, node.val]]
+            self.min_val = min(self.min_val, c)
+            self.max_val = max(self.max_val, c)
+
+            dfs(node.left, r + 1, c - 1)
+            dfs(node.right, r + 1, c + 1)
+
+        dfs(root, 0, 0)
+        for c in range(self.min_val, self.max_val + 1):
+            col = sorted(cache[c], key=lambda x: (x[0], x[1]))
             col_sorted = []
             for p in col:
                 col_sorted.append(p[1])

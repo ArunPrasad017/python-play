@@ -11,14 +11,16 @@ Solution runtime - O(nlogn)
     - sort does o(n) or in log(n) time
     - 
 """
+
+
 def findDuplicates(self, nums: List[int]) -> List[int]:
     lst2 = []
     nums.sort()
     i = 0
-    while i<len(nums)-1:
-        if nums[i] == nums[i+1]:
+    while i < len(nums) - 1:
+        if nums[i] == nums[i + 1]:
             lst2.append(nums[i])
-            i+=2
+            i += 2
         else:
-            i+=1
+            i += 1
     return lst2

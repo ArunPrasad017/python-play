@@ -14,7 +14,7 @@
 #         return nums3+nums1[:m]
 
 # Modify to update arrays in place
-# using the double ptr with temp array - 
+# using the double ptr with temp array -
 # TC: o(m+n) SC: o(n)
 # def merge(nums1,nums2,m,n):
 #     nums1_copy = nums1[:m]
@@ -36,24 +36,25 @@
 
 # Modify to update arrays in place
 # Without temporary array and using double ptr technique
-def merge(nums1,nums2,m,n):
-    p1,p2 = m-1,n-1
-    p = m+n-1
+def merge(nums1, nums2, m, n):
+    p1, p2 = m - 1, n - 1
+    p = m + n - 1
 
-    while p1>=0 and p2>=0:
+    while p1 >= 0 and p2 >= 0:
         if nums1[p1] <= nums2[p2]:
             nums1[p] = nums2[p2]
-            p2-=1
+            p2 -= 1
         else:
             nums1[p] = nums1[p1]
-            p1-=1
-        p-=1
-    nums1[:p2+1] = nums2[:p2+1]
+            p1 -= 1
+        p -= 1
+    nums1[: p2 + 1] = nums2[: p2 + 1]
     return nums1
 
-nums1 = [1,2,3,0,0,0]
+
+nums1 = [1, 2, 3, 0, 0, 0]
 m = 3
-nums2 = [2,5,6]
+nums2 = [2, 5, 6]
 n = 3
 
-print(merge(nums1,nums2,m,n))
+print(merge(nums1, nums2, m, n))

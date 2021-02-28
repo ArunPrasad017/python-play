@@ -4,6 +4,8 @@ A well-formed LinkedList need two pointers head and tail to support operations a
 and tail pointer of one LinkedList we call oddList; the variables evenHead and even are the head pointer and tail pointer of another LinkedList we call evenList.
 
 """
+
+
 def oddEvenList(head):
     while head is None:
         return None

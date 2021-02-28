@@ -10,15 +10,17 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
     The maximum number of consecutive 1s is 3.
 """
 
-def findMaxConsecutiveOnes(nums):
-    max_cnt, count = 0,0
-    for num in nums:
-        if num==1:
-            count+=1
-        else:
-            max_cnt = max(max_cnt,count)
-            count = 0
-    return max(max_cnt,count)
 
-Input=[1,1,0,1,1,1]
+def findMaxConsecutiveOnes(nums):
+    max_cnt, count = 0, 0
+    for num in nums:
+        if num == 1:
+            count += 1
+        else:
+            max_cnt = max(max_cnt, count)
+            count = 0
+    return max(max_cnt, count)
+
+
+Input = [1, 1, 0, 1, 1, 1]
 print(findMaxConsecutiveOnes(Input))

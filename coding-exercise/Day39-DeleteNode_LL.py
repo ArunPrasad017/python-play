@@ -10,6 +10,7 @@ Since we do not have access to the node before the one we want to delete, we can
 Instead, we have to replace the value of the node we want to delete with the value in the node after it, and then delete the node after it.
 """
 
+
 def deleteNode(node):
     if node is None:
         return

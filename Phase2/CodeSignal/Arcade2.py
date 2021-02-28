@@ -7,9 +7,11 @@ centuryFromYear(year) = 20;
 For year = 1700, the output should be
 centuryFromYear(year) = 17.
 """
+
+
 def centuryFromYear(year):
-    res = (year//100)
-    if year%100==0:
+    res = year // 100
+    if year % 100 == 0:
         return res
     else:
-        return res+1
+        return res + 1

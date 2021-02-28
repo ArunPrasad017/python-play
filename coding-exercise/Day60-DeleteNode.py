@@ -9,4 +9,4 @@ class Solution:
         else:
             tempNode = node.next
             node.val = tempNode.val
-            node.next=tempNode.next
+            node.next = tempNode.next

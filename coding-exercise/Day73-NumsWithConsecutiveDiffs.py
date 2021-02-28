@@ -15,20 +15,22 @@ Input: N = 2, K = 1
 Output: [10,12,21,23,32,34,43,45,54,56,65,67,76,78,87,89,98]
 """
 
-def dfs(self,num,n,k,res):
-    if n==0:
+
+def dfs(self, num, n, k, res):
+    if n == 0:
         res.append(num)
         return
-    last_digit = num%10
-    if last_digit>=k:
-        self.dfs(num*10 +(last_digit-k),n-1,k,res)
-    if (k>0 and last_digit+k<10):
-        self.dfs(num*10 +(last_digit+k),n-1,k,res)
-        
+    last_digit = num % 10
+    if last_digit >= k:
+        self.dfs(num * 10 + (last_digit - k), n - 1, k, res)
+    if k > 0 and last_digit + k < 10:
+        self.dfs(num * 10 + (last_digit + k), n - 1, k, res)
+
+
 def numsSameConsecDiff(self, N: int, K: int) -> List[int]:
     res = []
-    if N==0:
+    if N == 0:
         res.append(0)
-    for d in range(1,10):
-        self.dfs(d,N-1,K,res)
+    for d in range(1, 10):
+        self.dfs(d, N - 1, K, res)
     return res

@@ -26,17 +26,17 @@ The number of operations will be in the range of [1, 10000].
 Please do not use the built-in HashSet library.
 """
 
+
 class MyHashSet:
-    
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.numBuckets = 15000
         self.buckets = [[] for _ in range(self.numBuckets)]
-    
-    def hashFunction(self,key):
-        return (key%self.numBuckets)
+
+    def hashFunction(self, key):
+        return key % self.numBuckets
 
     def add(self, key: int) -> None:
         i = self.hashFunction(key)
@@ -47,7 +47,6 @@ class MyHashSet:
         i = self.hashFunction(key)
         if self.contains(key):
             self.buckets[i].remove(key)
-        
 
     def contains(self, key: int) -> bool:
         """
@@ -55,6 +54,7 @@ class MyHashSet:
         """
         i = self.hashFunction(key)
         return key in self.buckets[i]
+
 
 # Your MyHashSet object will be instantiated and called as such:
 obj = MyHashSet()

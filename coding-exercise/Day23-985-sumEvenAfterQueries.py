@@ -24,20 +24,22 @@ Output: [8,6,2,4]
 #         i+=1
 #     return res
 
-def sumEvenAfterQueries(lst,queries):
-    sum_val = sum(x for x in lst if x%2==0)
+
+def sumEvenAfterQueries(lst, queries):
+    sum_val = sum(x for x in lst if x % 2 == 0)
     ans = []
 
-    for val,index in queries:
-        if lst[index]%2==0:
-            sum_val-=lst[index]
-        lst[index]+=val
-        if lst[index]%2==0:
-            sum_val+=lst[index]
+    for val, index in queries:
+        if lst[index] % 2 == 0:
+            sum_val -= lst[index]
+        lst[index] += val
+        if lst[index] % 2 == 0:
+            sum_val += lst[index]
         ans.append(sum_val)
     return ans
 
-A = [1,2,3,4]
-queries = [[1,0],[-3,1],[-4,0],[2,3]]
 
-print(sumEvenAfterQueries(A,queries))
+A = [1, 2, 3, 4]
+queries = [[1, 0], [-3, 1], [-4, 0], [2, 3]]
+
+print(sumEvenAfterQueries(A, queries))

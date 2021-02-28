@@ -26,6 +26,8 @@ class Node:
         self.next = next
 """
 from collections import deque
+
+
 def connect(root):
     if root is None:
         return None
@@ -34,8 +36,8 @@ def connect(root):
         size = len(q)
         for i in range(size):
             node = q.popleft()
-            if i<size-1:
-                node.next=q[0]
+            if i < size - 1:
+                node.next = q[0]
             if node.left:
                 q.append(node.left)
             if node.right:

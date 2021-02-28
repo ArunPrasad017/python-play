@@ -16,20 +16,22 @@ Input: [0,3,2,1]
 Output: true
 
 """
+
+
 def validMountainArray(A):
     if A[0] > A[1]:
         return False
-    i=0
-    n=len(A)
-    while i+1<n and A[i]<A[i+1]:
-        i+=1
+    i = 0
+    n = len(A)
+    while i + 1 < n and A[i] < A[i + 1]:
+        i += 1
     if i in [0, n - 1]:
         return False
-    while i+1<n and A[i]>A[i+1]:
-        i+=1
-    
-    return i==n-1
+    while i + 1 < n and A[i] > A[i + 1]:
+        i += 1
+
+    return i == n - 1
 
 
-lst = [0,1,2,4,2,1]
+lst = [0, 1, 2, 4, 2, 1]
 print(validMountainArray(lst))

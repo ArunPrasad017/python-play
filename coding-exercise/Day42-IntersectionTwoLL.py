@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     def getIntersectionNode(headA, headB):
         if headA is None and headB is None:
@@ -11,7 +12,7 @@ class Solution:
         ptr1 = headA
         ptr2 = headB
 
-        while ptr1!=ptr2:
+        while ptr1 != ptr2:
             # if ptr2 is None:
             #     ptr2 = headA
             # else:

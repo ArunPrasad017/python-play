@@ -22,29 +22,32 @@
 #             left+=1
 #     return [-1,-1]
 
-def twoSum(nums,i,res):
-    left=i+1
-    right = len(nums)-1
-    while left<right:
-        total = nums[i]+nums[left]+nums[right]
-        if total<0 or (left>i+1 and nums[left]==nums[left-1]):
-            left+=1
-        elif total>0 or (right<len(nums)-1 and nums[right]==nums[right+1]):
-            right-=1
+
+def twoSum(nums, i, res):
+    left = i + 1
+    right = len(nums) - 1
+    while left < right:
+        total = nums[i] + nums[left] + nums[right]
+        if total < 0 or (left > i + 1 and nums[left] == nums[left - 1]):
+            left += 1
+        elif total > 0 or (right < len(nums) - 1 and nums[right] == nums[right + 1]):
+            right -= 1
         else:
-            res.append([nums[i],nums[left],nums[right]])
-            left+=1
-            right-=1
+            res.append([nums[i], nums[left], nums[right]])
+            left += 1
+            right -= 1
+
 
 def threeSum(nums):
     res = []
     nums.sort()
     for i in range(len(nums)):
-        if nums[i]>0:
+        if nums[i] > 0:
             break
-        if i==0 or nums[i]!=nums[i-1]:
-            twoSum(nums,i,res)
+        if i == 0 or nums[i] != nums[i - 1]:
+            twoSum(nums, i, res)
     return res
+
 
 # nums=[3,2,4]
 # nums = [1,3,8,5]
@@ -54,5 +57,5 @@ def threeSum(nums):
 # target2 = 9
 # print(twoSum2(nums2,target2))
 
-nums = [0,-4,-1,-4,-2,-3,2]
+nums = [0, -4, -1, -4, -2, -3, 2]
 print(threeSum(nums))

@@ -16,14 +16,18 @@ Both the left and right subtrees must also be binary search trees.
 Input: [2,1,3]
 Output: true
 """
+
+
 class Solution:
-    def isBinarySearchTreeRec(self,node,min_val,max_val):
+    def isBinarySearchTreeRec(self, node, min_val, max_val):
         if node is None:
             return True
-        elif node.val >= max_val or node.val<=min_val:
+        elif node.val >= max_val or node.val <= min_val:
             return False
         else:
-            return self.isBinarySearchTreeRec(node.left,min_val,node.val) and self.isBinarySearchTreeRec(node.right,node.val, max_val)
+            return self.isBinarySearchTreeRec(
+                node.left, min_val, node.val
+            ) and self.isBinarySearchTreeRec(node.right, node.val, max_val)
 
-    def isBinarySearchTree(self,root):
-        return self.isBinarySearchTreeRec(root,float(-inf), float(inf))
+    def isBinarySearchTree(self, root):
+        return self.isBinarySearchTreeRec(root, float(-inf), float(inf))

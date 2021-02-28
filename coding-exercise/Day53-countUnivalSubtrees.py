@@ -22,25 +22,33 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
-    def countUnivalSubtreesRec(self,node):
+    def countUnivalSubtreesRec(self, node):
         if node.left is None and node.right is None:
-            self.count+=1
+            self.count += 1
             return self.count
         if node.left and node.right:
-            if node.val == node.right.val and node.val==node.left.val:
-                self.count+=1
-        elif node.left is None and node.right.val == node.val and (node.right.left is None and node.right.right is None):
-            self.count+=1
-        elif node.right is None and node.left.val == node.val and (node.left.left is None and node.left.right is None):
-            self.count+=1
+            if node.val == node.right.val and node.val == node.left.val:
+                self.count += 1
+        elif (
+            node.left is None
+            and node.right.val == node.val
+            and (node.right.left is None and node.right.right is None)
+        ):
+            self.count += 1
+        elif (
+            node.right is None
+            and node.left.val == node.val
+            and (node.left.left is None and node.left.right is None)
+        ):
+            self.count += 1
         if node.left:
             return countUnivalSubtreesRec(node.left)
         if node.right:
             return countUnivalSubtreesRec(node.right)
-        
+
         return self.count
-            
 
     def countUnivalSubtrees(self, root):
         if root is None:

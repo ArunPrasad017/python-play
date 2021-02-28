@@ -14,16 +14,18 @@ strstr(s, x) = 10.
 passed for 25/27 cases
 """
 
+
 def strstr(s, x):
-    if s==x:
+    if s == x:
         return 0
-    if len(s)<len(x):
+    if len(s) < len(x):
         return -1
-    for i in range((len(s) - len(x))+1):
-        if x==s[i:(i+len(x))]:
+    for i in range((len(s) - len(x)) + 1):
+        if x == s[i : (i + len(x))]:
             return i
     return -1
 
+
 # Additional
 def baseConversion(n, x):
-    return hex(int(str(n),x))[2:]
+    return hex(int(str(n), x))[2:]

@@ -6,27 +6,30 @@ The integer division should truncate toward zero.
 
 Hitn: Uses Stack implementation
 """
-def calculate(s):
-    stack =[]
-    num = 0
-    sign = '+'
 
-    for i,c in enumerate(s):
+
+def calculate(s):
+    stack = []
+    num = 0
+    sign = "+"
+
+    for i, c in enumerate(s):
         if c.isdigit():
             # stack.append(c)
-            num = num*10+int(c)
-        if c in ['+', '*', '/', '-'] or i+1==len(s):
-            if sign == '+':
+            num = num * 10 + int(c)
+        if c in ["+", "*", "/", "-"] or i + 1 == len(s):
+            if sign == "+":
                 stack.append(num)
-            elif sign =='-':
+            elif sign == "-":
                 stack.append(-num)
-            elif sign == '*':
-                stack[-1] = stack[-1]*num
-            elif sign == '/':
-                stack[-1]= int(stack[-1]/float(num))
-            sign =c
+            elif sign == "*":
+                stack[-1] = stack[-1] * num
+            elif sign == "/":
+                stack[-1] = int(stack[-1] / float(num))
+            sign = c
             num = 0
     return sum(stack)
 
-s=" 3+5 / 2 "
+
+s = " 3+5 / 2 "
 print(calculate(s))

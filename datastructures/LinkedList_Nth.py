@@ -1,18 +1,19 @@
 class Node:
-    
     def __init__(self, value):
         self.value = value
-        self.nextnode  = None
+        self.nextnode = None
+
 
 def nth_to_last_node(n, head):
-    cnt = 0 
+    cnt = 0
     temp = head
-    while(head):
-        cnt+=1
+    while head:
+        cnt += 1
         head = head.nextnode
-    for i in range(0,(cnt-n)):
-        temp=temp.nextnode
+    for i in range(0, (cnt - n)):
+        temp = temp.nextnode
     return temp.value
+
 
 a = Node(1)
 b = Node(2)
@@ -26,5 +27,5 @@ c.nextnode = d
 d.nextnode = e
 
 # This would return the node d with a value of 4, because its the 2nd to last node.
-target_node = nth_to_last_node(4, a) 
+target_node = nth_to_last_node(4, a)
 print(target_node)

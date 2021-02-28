@@ -5,10 +5,12 @@ class Node:
         self.next = next
         self.child = child
 
+
 def flatten(root):
     if root is None:
         flattenRec(root)
     return root
+
 
 def flattenRec(root):
     curr = root
@@ -29,6 +31,7 @@ def flattenRec(root):
         if curr is not None:
             tail = curr
     return tail
+
 
 if __name__ == "__main__":
     # lst = [1,2,3,4,5,6,None,None,None,7,8,9,10,None,None,11,12]

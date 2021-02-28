@@ -12,13 +12,15 @@ Explanation:
 Therefore only 12 and 7896 contain an even number of digits.
 """
 
+
 def findNumbers(nums):
-    count=0
+    count = 0
     if not nums:
         return count
     for num in nums:
-        if len(str(num)) %2==0:
-            count+=1
+        if len(str(num)) % 2 == 0:
+            count += 1
     return count
 
-print(findNumbers([12,345,2,6,7896]))
+
+print(findNumbers([12, 345, 2, 6, 7896]))

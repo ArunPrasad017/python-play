@@ -1,5 +1,6 @@
 def perfectCity(departure, destination):
     import math
+
     (depX, depY) = departure
     (destX, destY) = destination
     distances = []
@@ -33,6 +34,7 @@ def perfectCity(departure, destination):
         distances.append(distance)
 
     return min(distances)
+
 
 departure = [0.4, 1]
 destination = [0.9, 3]

@@ -1,3 +1,3 @@
-def findKthLargest(nums,k):
+def findKthLargest(nums, k):
     nums.sort(reverse=True)
-    return nums[k-1]
+    return nums[k - 1]

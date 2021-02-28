@@ -24,18 +24,18 @@ return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
 #         self.left = left
 #         self.right = right
 class Solution:
-    def hasPathRec(self,node,target):
-        target-=node.val
+    def hasPathRec(self, node, target):
+        target -= node.val
         res = 0
         if node.left is None and node.right is None:
-            return target==0
+            return target == 0
         if node.left:
             res = res or self.hasPathRec(node.left, target)
         if node.right:
             res = res or self.hasPathRec(node.right, target)
         return res
-    
+
     def hasPathSum(self, root: TreeNode, sum: int) -> bool:
-        if root is None and sum>=0:
+        if root is None and sum >= 0:
             return False
         return self.hasPathRec(root, sum)

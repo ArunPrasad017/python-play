@@ -8,9 +8,12 @@ Input: "Let's take LeetCode contest"
 Output: "s'teL ekat edoCteeL tsetnoc"
 
 """
+
+
 def reverseWords(s):
     lst = s.split()
-    return ' '.join([i[::-1] for i in lst])
+    return " ".join([i[::-1] for i in lst])
+
 
 s = "Let's take LeetCode contest"
 print(reverseWords(s))

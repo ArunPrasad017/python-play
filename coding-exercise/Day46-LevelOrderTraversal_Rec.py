@@ -18,17 +18,18 @@ output:
 
 """
 
-def bfsHelper(node, level,levels):
+
+def bfsHelper(node, level, levels):
     if len(levels) == level:
         levels.append([])
-    if level%2==1:
-        levels[level].insert(0,node.val)
+    if level % 2 == 1:
+        levels[level].insert(0, node.val)
     else:
-        levels[level].append(node.val)    
+        levels[level].append(node.val)
     if node.left:
-        bfsHelper(node.left,level+1,levels)
+        bfsHelper(node.left, level + 1, levels)
     if node.right:
-        bfsHelper(node.right,level+1,levels)
+        bfsHelper(node.right, level + 1, levels)
 
 
 def levelOrder(root):
@@ -36,5 +37,5 @@ def levelOrder(root):
     levels = []
     if root is None:
         return levels
-    bfsHelper(root,0,levels)
+    bfsHelper(root, 0, levels)
     return levels

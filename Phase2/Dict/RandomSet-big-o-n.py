@@ -1,12 +1,12 @@
 import random
-class RandomizedSet:
 
+
+class RandomizedSet:
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.hashSet = set()
-        
 
     def insert(self, val: int):
         """
@@ -17,7 +17,6 @@ class RandomizedSet:
             return True
         else:
             return False
-        
 
     def remove(self, val: int):
         """
@@ -28,14 +27,12 @@ class RandomizedSet:
             return True
         else:
             return False
-        
 
     def getRandom(self):
         """
         Get a random element from the set.
         """
-        return (random.sample(self.hashSet,1)[0])
-        
+        return random.sample(self.hashSet, 1)[0]
 
 
 # Your RandomizedSet object will be instantiated and called as such:

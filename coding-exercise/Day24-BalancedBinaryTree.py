@@ -13,6 +13,7 @@ height-balanced binary tree = a binary tree in which the left and right subtrees
 #         self.left = left
 #         self.right = right
 
+
 def isBalancedDFS(root):
     if not root:
         return True, -1
@@ -22,8 +23,9 @@ def isBalancedDFS(root):
     rightBalanced, rightHeight = isBalancedDFS(root.right)
     if not rightBalanced:
         return False, 0
-    
-    return (abs(leftHeight - rightHeight)<2), 1+max(leftHeight,rightHeight)
+
+    return (abs(leftHeight - rightHeight) < 2), 1 + max(leftHeight, rightHeight)
+
 
 def isBalanced(root):
     return isBalancedDFS(root)[0]

@@ -12,14 +12,16 @@ Example 2:
 Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
 
 """
+
+
 def reorderList(head):
     """
     Do not return anything, modify head in-place instead.
     """
     if not head:
         return None
-    
-    def reverseList(prev,head):
+
+    def reverseList(prev, head):
         prevNode = prev
         currNode = head
         nextNode = None
@@ -30,7 +32,7 @@ def reorderList(head):
             prevNode = currNode
             head = nextNode
         return prevNode
-    
+
     # find the mid point of the list
     slow_ptr, fast_ptr = head, head
     while fast_ptr is not None and fast_ptr.next is not None:
@@ -38,13 +40,13 @@ def reorderList(head):
         fast_ptr = fast_ptr.next.next
 
     # reverse the second part of the list
-    second = reverseList(None,slow_ptr)
+    second = reverseList(None, slow_ptr)
     first = head
     while second.next:
         tmp = first.next
         first.next = second
         first = tmp
-        
+
         tmp = second.next
         second.next = first
         second = tmp

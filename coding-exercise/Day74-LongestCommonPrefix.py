@@ -7,16 +7,17 @@ Input: ["flower","flow","flight"]
 Output: "fl"
 """
 
+
 def longestCommonPrefix(strs):
-    if not(strs):
+    if not (strs):
         return ""
     strs = sorted(strs)
     prefix = strs[0]
-    for i in range(1,len(strs)):
+    for i in range(1, len(strs)):
         temp_str = ""
         for j in range(len(prefix)):
-            if prefix[j]==strs[i][j]:
-                temp_str+=prefix[j]
+            if prefix[j] == strs[i][j]:
+                temp_str += prefix[j]
             else:
                 break
         prefix = temp_str

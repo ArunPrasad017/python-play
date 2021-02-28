@@ -10,22 +10,23 @@ Otherwise, we define that this word doesn't use capitals in a right way.
 
 """
 
+
 class Solution:
     def detectCapitalUse(self, word: str) -> bool:
-        if len(word)>1:
-            is_first_cap = True if ord(word[0]) in range(65,91) else False
-            is_second_cap = True if ord(word[1]) in range(65,91) else False
+        if len(word) > 1:
+            is_first_cap = True if ord(word[0]) in range(65, 91) else False
+            is_second_cap = True if ord(word[1]) in range(65, 91) else False
             if is_first_cap and is_second_cap:
-                for i in range(2,len(word)):
-                    if ord(word[i]) not in range(65,91):
+                for i in range(2, len(word)):
+                    if ord(word[i]) not in range(65, 91):
                         return False
             elif is_first_cap and not is_second_cap:
-                for i in range(2,len(word)):
-                    if ord(word[i]) not in range(97,123):
+                for i in range(2, len(word)):
+                    if ord(word[i]) not in range(97, 123):
                         return False
             else:
                 for i in range(1, len(word)):
-                    if ord(word[i]) not in range(97,123):
+                    if ord(word[i]) not in range(97, 123):
                         return False
             return True
         else:

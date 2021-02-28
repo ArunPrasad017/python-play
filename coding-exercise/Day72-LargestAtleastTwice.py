@@ -16,10 +16,11 @@ Explanation: 6 is the largest integer, and for every other number in the array x
 
 """
 
+
 class Solution:
     def dominantIndex(self, nums: List[int]) -> int:
         maxIndex = nums.index(max(nums))
-        for i,num in enumerate(nums):
-            if i!=maxIndex and num*2>nums[maxIndex]:
+        for i, num in enumerate(nums):
+            if i != maxIndex and num * 2 > nums[maxIndex]:
                 return -1
         return maxIndex
