@@ -2,7 +2,7 @@ def finder(a1,a2):
     a1.sort()
     a2.sort()
 
-    for i in range(0,len(a1)):
+    for i in range(len(a1)):
         if(a1[i] != a2[i]):
             return a1[i]
 

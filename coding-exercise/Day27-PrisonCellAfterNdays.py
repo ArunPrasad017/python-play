@@ -9,7 +9,7 @@ def prisonCellSet(cells,N):
     seen = set()
     length = 0
     cycle = False
-    for i in range(N):
+    for _ in range(N):
         next = cellAssigner(cells)
         if tuple(next) in seen:
             cycle = True

@@ -1,8 +1,5 @@
 def defangIPaddr(address):
     str2=""
-    for i in range(0,len(address)):
-        if address[i] =='.':
-            str2+='[.]'
-        else:
-            str2+=address[i]
+    for addres in address:
+        str2 += '[.]' if addres == '.' else addres
     return str2

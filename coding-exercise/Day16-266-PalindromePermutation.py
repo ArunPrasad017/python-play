@@ -22,9 +22,7 @@ def canPermutePalindrome(s):
             dict_string[c]=1
         else:
             dict_string[c]+=1
-    count = 0
-    for k,v in dict_string.items():
-        count+=(v%2)
+    count = sum((v%2) for k,v in dict_string.items())
     return count<=1
 
 #string = "aabbhijkkjih"

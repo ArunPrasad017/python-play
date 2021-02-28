@@ -5,12 +5,12 @@ class Node:
         self.nextnode  = None
 
 def nth_to_last_node(n, head):
-    cnt = 0 
+    cnt = 0
     temp = head
     while(head):
         cnt+=1
         head = head.nextnode
-    for i in range(0,(cnt-n)):
+    for _ in range(cnt-n):
         temp=temp.nextnode
     return temp.value
 

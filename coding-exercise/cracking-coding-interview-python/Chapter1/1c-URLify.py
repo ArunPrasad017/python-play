@@ -5,11 +5,8 @@ new strings and the runtime complexity and space complexity is o(n)
 
 def urlify(string,length):
     string2 = ""
-    for i in range(0,length):
-        if string[i] == ' ':
-            string2+= '%20'
-        else:
-            string2+=string[i]
+    for i in range(length):
+        string2 += '%20' if string[i] == ' ' else string[i]
     return string2
 
 #string = 'Mr John Smith    '

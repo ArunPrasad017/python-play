@@ -6,7 +6,7 @@ def highFive(items):
         dict1[lst[0]].append(lst[1])
     print(dict1)
 
-    for key in dict1.keys():
+    for key in dict1:
         id = key
         val = int(sum(sorted(dict1[id],reverse=True)[:5])/5)
         lst3.append([id,val])

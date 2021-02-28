@@ -13,9 +13,9 @@ def removeNthFromEnd(head,n):
     slow = dummmynode
     fast = dummmynode
 
-    for i in range(0,n+1):
+    for _ in range(n+1):
         fast=fast.next
-    
+
     while slow!=None:
         slow = slow.next
         fast = fast.next

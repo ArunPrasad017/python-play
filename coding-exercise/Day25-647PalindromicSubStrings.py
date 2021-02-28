@@ -36,7 +36,7 @@ def palindromicSubString(s):
     N = len(s)
     dp = [[0]* N for _ in range(N)]
 
-    for i in range(0,len(s)):
+    for i in range(len(s)):
         dp[i][i] = 1
         count+=1
     for col in range(1,len(s)):

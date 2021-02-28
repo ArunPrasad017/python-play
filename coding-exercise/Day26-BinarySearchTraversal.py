@@ -21,36 +21,34 @@ from collections import deque
 def printLevelOrder(root):
     if root is None:
         return
-    
-    queue = []
-    queue.append(root)
 
-    while (len(queue)>0):
+    queue = [root]
+    while queue:
         print(queue[0].val)
         node = queue.pop(0)
 
         if node.left is not None:
             queue.append(node.left)
-        
+
         if node.right is not None:
             queue.append(node.right)
 
 def printReverseOrder(root):
     if root is None:
         return
-    
+
     queue = []
     stack = deque()
     queue.append(root)
 
-    while (len(queue)>0):
+    while queue:
         # print(queue[0].val)
         node = queue.pop(0)
         stack.append(node.val)
 
         if node.right is not None:
             queue.append(node.right)
-        
+
         if node.left is not None:
             queue.append(node.left)
     stack.reverse()

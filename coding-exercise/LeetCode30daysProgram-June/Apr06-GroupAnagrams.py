@@ -15,9 +15,9 @@ Output:
 from collections import defaultdict
 def groupAnagrams(strs):
     dict_combo = defaultdict(list)
-    for i in range(len(strs)):
-        key = "".join(sorted(strs[i]))
-        dict_combo[key].append(strs[i])
+    for str_ in strs:
+        key = "".join(sorted(str_))
+        dict_combo[key].append(str_)
     return list(dict_combo.values())
 
 strs = ["eat","tea","tan","ate","nat","bat"]

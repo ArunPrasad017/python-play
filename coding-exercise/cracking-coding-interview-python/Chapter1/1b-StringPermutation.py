@@ -13,12 +13,11 @@ def stringPermutations(str1, str2):
         else:
             dict1+=1
     for c in str2:
-        if c in dict1.keys():
+        if c in dict1:
             dict1[c]-=1
         else:
             return False
-    res = all(x==0 for x in dict1.values())
-    return res
+    return all(x==0 for x in dict1.values())
 
 str1 = "abcd"
 str2 = "beea"

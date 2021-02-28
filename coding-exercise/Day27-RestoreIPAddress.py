@@ -5,9 +5,7 @@ def restoreIpAddresses(s):
     def isValid(digits):
         if len(digits)>1 and digits[0] =="0":
             return False
-        if int(digits)<0 or int(digits)>255:
-            return False
-        return True
+        return int(digits) >= 0 and int(digits) <= 255
     
     def backtrack(lastPoint, remainingPoints):
         if remainingPoints ==0:

@@ -1,10 +1,10 @@
 def pair_sum2(arr,k):
     count = 0
-    for i in range(0,len(arr)):
-        for j in range(0,len(arr)):
-            if(arr[i] + arr[j]) == k:
+    for item in arr:
+        for item_ in arr:
+            if item + item_ == k:
                 count+=1
-        arr.remove(arr[i])
+        arr.remove(item)
     print(count)
 
 # Correct solution - using sets

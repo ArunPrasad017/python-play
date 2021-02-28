@@ -18,7 +18,7 @@ def convert(string,numRows):
         else:
             dict_string[pos]+=char
         pos+=step
-        if pos==numRows or pos==1:
+        if pos in [numRows, 1]:
             step*=-1 # reverse the direction whenever you're at the extreme ends 
     # create the modified string from dict
     string_final = ""

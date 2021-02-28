@@ -14,7 +14,7 @@ def string_Compression(s):
     for c in s:
         if c==prev:
             count+=1
-        elif c!=prev:
+        else:
             if prev:
                 encode_str+=(prev+str(count))
             count=1

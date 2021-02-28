@@ -35,7 +35,7 @@ def balance_checks(s):
 
     for char in s:
         is_balanced = False
-        if(char in dict_balanced.keys()):
+        if char in dict_balanced:
             stack1.push(char)
         elif(char in dict_balanced.values()):
             if(stack1.isEmpty()):
@@ -46,10 +46,7 @@ def balance_checks(s):
                 if(is_balanced):
                     stack1.pop()
 
-    if(stack1.isEmpty()):
-        return True
-    else:
-        return False
+    return bool((stack1.isEmpty()))
 
 
 if __name__ == "__main__":

@@ -26,14 +26,14 @@ def findPath(grid,m,n,i,j,direction):
     downward = findPath(grid,m,n,i+1,j,direction)
 
 def numDistinctIslands(grid):
-    if len(grid) == 0 or grid == None:
+    if len(grid) == 0 or grid is None:
         return None
     Islands_set = set()
     m = len(grid)
     n = len(grid[0])
 
-    for i in range(0,m):
-        for j in range(0,n):
+    for i in range(m):
+        for j in range(n):
             if grid[i][j]==1:
                 direction = []
                 findPath(grid,m,n,i,j,direction)

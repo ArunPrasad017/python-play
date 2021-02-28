@@ -1,5 +1,5 @@
 def searchMatrix(matrix, target):
-    if len(matrix)==0 or matrix==None:
+    if len(matrix) == 0 or matrix is None:
         return 0
     row = 0
     col = len(matrix[0])-1

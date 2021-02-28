@@ -10,8 +10,8 @@ def findDuplicate(path):
             content = content.rstrip(')')
             defaultdict_content[content].append(directory+'/'+name)
     res = []
-    for key in defaultdict_content.keys():
-        res.append(defaultdict_content[key])
+    for key, value in defaultdict_content.items():
+        res.append(value)
     return res
 
 path = ["root/a 1.txt(abcd) 2.txt(efgh)", "root/c 3.txt(abcd)", "root/c/d 4.txt(efgh)", "root 4.txt(efgh)"]

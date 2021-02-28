@@ -13,13 +13,13 @@ def findPath(grid,m,n,i,j):
     downward = findPath(grid,m,n,i+1,j)
 
 def numIslands(grid):
-    if len(grid) == 0 or grid == None:
+    if len(grid) == 0 or grid is None:
         return None
     Islands_count = 0
     m = len(grid)
     n = len(grid[0])
-    for i in range(0,m):
-        for j in range(0,n):
+    for i in range(m):
+        for j in range(n):
             if grid[i][j]=='1':
                 Islands_count+=1
                 findPath(grid,m,n,i,j)

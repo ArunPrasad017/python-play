@@ -12,7 +12,7 @@ def subdomain_counter(cpdomains):
         count = int(count)
         subdomains = domain.split('.')
 
-        for i in range(0, len(subdomains)):
+        for i in range(len(subdomains)):
             counter[".".join(subdomains[i:])]+=count
     return ["{} {}".format(k,v) for k,v in counter.items()]
 

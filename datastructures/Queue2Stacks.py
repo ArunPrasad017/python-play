@@ -12,10 +12,10 @@ class Queue2Stacks(object):
         self.stack2 = self.stack1[::-1]
     
     def dequeue(self):
-        if(len(self.stack2)>0):
+        if (len(self.stack2)>0):
             return(self.stack2.pop())
         else:
-            for i in range(0,len(self.stack1)):
+            for item in self.stack1:
                 self.stack1.pop()
             return("Empty queue")
 

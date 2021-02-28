@@ -32,10 +32,7 @@ def oneAway(s1,s2):
         return oneInsertAway(s2,s1)
     
 def oneEditAway(s1,s2):
-    count = 0
-    for i in range(0, len(s1)):
-        if s1[i]!=s2[i]:
-            count+=1
+    count = sum(1 for i in range(len(s1)) if s1[i]!=s2[i])
     return count==1
 
 def oneInsertAway(s1,s2):
@@ -47,10 +44,9 @@ def oneInsertAway(s1,s2):
             if edited:
                 return False
             edited = True
-            index2+=1
         else:
             index1+=1
-            index2+=1
+        index2+=1
     return True
 
 def test_oneAway():
