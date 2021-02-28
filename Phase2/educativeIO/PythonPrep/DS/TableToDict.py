@@ -96,9 +96,7 @@ def func_generate_employee_dict(connection_string,sql_query):
     cursor,conn = connect_to_db(connection_string)
     # execute the query that is passed to the function
     cursor.execute(sql_query)
-    columns_list = []
-    for column in cursor.description:
-        columns_list.append(column[0])
+    columns_list = [column[0] for column in cursor.description]
     records = cursor.fetchall()
     for row in records:
         for key,value in zip(columns_list,row):
