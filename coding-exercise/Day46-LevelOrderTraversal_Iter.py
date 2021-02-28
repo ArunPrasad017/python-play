@@ -18,28 +18,33 @@ output:
 
 """
 from collections import deque
+
+
 def levelOrder(root):
     # iterative method
     levels = []
     if not root:
         return levels
     level = 0
-    queue = deque([root,])
+    queue = deque(
+        [
+            root,
+        ]
+    )
     while queue:
         levels.append([])
-        level_length =len(queue)
+        level_length = len(queue)
         print(level_length)
         for _ in range(level_length):
             node = queue.popleft()
-            if level%2==0:
+            if level % 2 == 0:
                 levels[level].append(node.val)
             else:
-                levels[level].insert(0,node.val)        
+                levels[level].insert(0, node.val)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
                 print(queue)
-        level+=1
+        level += 1
     return levels
-

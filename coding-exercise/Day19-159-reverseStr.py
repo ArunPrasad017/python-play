@@ -9,12 +9,14 @@ Output: "bacdfeg"
 This is an absolute Naive solution
 """
 
-def reverseStr(s,k):
+
+def reverseStr(s, k):
     lst = [x for x in s]
-    for i in range(0, len(lst), 2*k):
-        lst[i:i+k] = reversed(lst[i:i+k])
+    for i in range(0, len(lst), 2 * k):
+        lst[i : i + k] = reversed(lst[i : i + k])
     return "".join(lst)
+
 
 s = "abcdefg"
 k = 2
-print(reverseStr(s,k))
+print(reverseStr(s, k))

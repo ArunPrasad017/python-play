@@ -10,20 +10,20 @@ def topKFrequent(nums, k):
     # return [sorted_list[i][0] for i in range(k)]
 
     # heap algorithm? - uses heapq and solves the issue we face of sorting the dictionary
-    dict1 ={}
+    dict1 = {}
     for num in nums:
         if num not in dict1:
             dict1[num] = 1
         else:
-            dict1[num]+= 1
+            dict1[num] += 1
     import heapq
-    return heapq.nlargest(k,dict1.keys(), key=dict1.get)
+
+    return heapq.nlargest(k, dict1.keys(), key=dict1.get)
 
 
-
-nums = [1,1,2,2,3,3,3,1,1,2,2,2,3,1,1]
+nums = [1, 1, 2, 2, 3, 3, 3, 1, 1, 2, 2, 2, 3, 1, 1]
 k = 2
 
-#nums = [1,2]
-#k = 2
-print(topKFrequent(nums,k))
+# nums = [1,2]
+# k = 2
+print(topKFrequent(nums, k))

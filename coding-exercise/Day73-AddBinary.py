@@ -16,14 +16,15 @@ Each string consists only of '0' or '1' characters.
 Each string is either "0" or doesn't contain any leading zero.
 
 """
+
+
 def addBinary(a, b):
     # easy method
     # integer_sum = int(a,2)+int(b,2)
     # return str(bin(integer_sum))[2:]
-    
-    # bitwise manipulation
-    x,y = int(a,2), int(b,2)
-    exor_val = x^y
-    and_val = (x&y)<<1
-    return bin(exor_val+and_val)[2:]
 
+    # bitwise manipulation
+    x, y = int(a, 2), int(b, 2)
+    exor_val = x ^ y
+    and_val = (x & y) << 1
+    return bin(exor_val + and_val)[2:]

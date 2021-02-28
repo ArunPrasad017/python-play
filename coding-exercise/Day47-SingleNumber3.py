@@ -17,21 +17,21 @@ def singleNumber(nums):
             hash_set.remove(num)
     return list(hash_set)
 
+
 # method2 using o(n) time and o(1) space
 def singleNumberLow(nums):
     val = 0
-    res = [0,0]
+    res = [0, 0]
     for num in nums:
-        val^=num
-    lsb = val&(-val)
+        val ^= num
+    lsb = val & (-val)
     for num in nums:
-        if (num&lsb):
-            res[0]^=num
+        if num & lsb:
+            res[0] ^= num
         else:
-            res[1]^=num
+            res[1] ^= num
     return res
 
-lst = [1,2,1,3,2,5]
+
+lst = [1, 2, 1, 3, 2, 5]
 print(singleNumberLow(lst))
-
-

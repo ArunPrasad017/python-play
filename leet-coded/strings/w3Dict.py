@@ -1,4 +1,6 @@
 import operator
+
+
 def dict_test():
     ""
     # 1. to sort (ascending and descending) a dictionary by value
@@ -22,7 +24,7 @@ def dict_test():
     #     dic_final.update(d)
     # return dic_final
 
-    # 4 - 
+    # 4 -
     # dic1={1:10, 2:20}
     # n =1
     # if n in dic1.keys():
@@ -62,17 +64,17 @@ def dict_test():
     # return max_val, min_val
 
     # 17 - duplicates in dict
-    # iterate thru the K,V pairs and find if values 
+    # iterate thru the K,V pairs and find if values
     # are already present in the new dict you created
 
-    #18 - dict is empty
+    # 18 - dict is empty
     # dict1 = {}
     # if not dict1:
     #     return True
 
-    #19 - 
+    # 19 -
 
-    #20:
+    # 20:
     # lst = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
     # set_dict = set()
 
@@ -82,13 +84,13 @@ def dict_test():
     #             set_dict.add(v)
     # return set_dict
 
-    #22 - Write a Python program to find the highest 3 values in a dictionary.
+    # 22 - Write a Python program to find the highest 3 values in a dictionary.
     # from heapq import nlargest
-    # my_dict = {'a':500, 'b':5874, 'c': 560,'d':400, 'e':5874, 'f': 20}  
+    # my_dict = {'a':500, 'b':5874, 'c': 560,'d':400, 'e':5874, 'f': 20}
     # l = nlargest(3,my_dict, key=my_dict.get)
     # return l
 
-    #23 - combine from list
+    # 23 - combine from list
     # from collections import Counter
     # lst1 = [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount': 300}, {'item': 'item1', 'amount': 750}]
     # result = Counter()
@@ -102,12 +104,12 @@ def dict_test():
     # result = Counter(str1)
     # return result
 
-    #25 related to print
+    # 25 related to print
 
-    #26 - scan through element in list 1 by 1 
+    # 26 - scan through element in list 1 by 1
     # and see the value in dic.items() by matching the key
 
-    #27 - list into a nested dictionary of keys.
+    # 27 - list into a nested dictionary of keys.
     # lst = [1,2,3,4]
     # d = current ={}
     # for i in lst:
@@ -115,7 +117,8 @@ def dict_test():
     #     current = current[i]
     # return current
 
-    #dict to be done (last 10)
+    # dict to be done (last 10)
     # enumerate()
+
 
 print(dict_test())

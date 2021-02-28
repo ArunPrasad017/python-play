@@ -1,12 +1,13 @@
 def myPow_Brute(x, n):
     # brute force solution
-    if n<0:
-        x = 1/x
-        n=abs(n)
-    ans =1
+    if n < 0:
+        x = 1 / x
+        n = abs(n)
+    ans = 1
     for _ in range(n):
-        ans*=x
+        ans *= x
     return ans
+
 
 # Exponention by Squaring method or Binary Exponentiation
 # the recursive method
@@ -24,20 +25,22 @@ def myPow_Brute(x, n):
 #         n = abs(n)
 #     return powHelper(x,n)
 
-def myPow(x,n):
-    if n<0:
-        x = 1/x
+
+def myPow(x, n):
+    if n < 0:
+        x = 1 / x
         n = abs(n)
     current = x
-    ans =1
+    ans = 1
     i = n
-    while i>0:
-        if i%2==1:
-            ans*=current
-        current*=current
-        i=i//2
+    while i > 0:
+        if i % 2 == 1:
+            ans *= current
+        current *= current
+        i = i // 2
     return ans
 
-x =  2.00000
+
+x = 2.00000
 n = 11
-print(myPow(x,n))
+print(myPow(x, n))

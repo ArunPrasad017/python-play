@@ -19,13 +19,15 @@ Example:
 Input: "I speak Goat Latin"
 Output: "Imaa peaksmaaa oatGmaaaa atinLmaaaaa"
 """
+
+
 def toGoatLatin(S):
     lst = S.split()
     lst2 = []
-    vowel_set = ('A','E','I','O','U')
-    for i,c in enumerate(lst):
+    vowel_set = ("A", "E", "I", "O", "U")
+    for i, c in enumerate(lst):
         if c[0].upper() in vowel_set:
-            lst2.append(c+'ma'+('a'*(i+1)))
+            lst2.append(c + "ma" + ("a" * (i + 1)))
         elif c[0].upper() not in vowel_set:
-            lst2.append(c[1:]+c[:1]+'ma'+('a'*(i+1)))
+            lst2.append(c[1:] + c[:1] + "ma" + ("a" * (i + 1)))
     return " ".join(lst2)

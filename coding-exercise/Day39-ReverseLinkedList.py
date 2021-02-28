@@ -9,7 +9,7 @@ class Solution:
 
         while head:
             currentNode = head
-            nextNode=head.next
+            nextNode = head.next
             head.next = prevNode
             prevNode = currentNode
             head = nextNode

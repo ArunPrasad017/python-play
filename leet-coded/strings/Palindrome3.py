@@ -14,7 +14,7 @@
 #         l-=1
 #         r+=1
 #     return s[l+1:r]
-    
+
 # def longestPalindrome(s):
 #     p =''
 #     for i in range(len(s)):
@@ -26,24 +26,26 @@
 # s = 'abccccdd'
 # print(longestPalindrome(s))
 
+
 def lengthOfLongestSubstring(s):
     left = 0
     current = 0
     longest = 0
-    dict1={}
-        
+    dict1 = {}
+
     for right, letter in enumerate(s):
         if letter not in dict1:
             dict1[letter] = right
-            current+=1
+            current += 1
         else:
-            longest = max(current,longest)
-            if dict1[letter]>=left:
-                left = dict1[letter]+1
+            longest = max(current, longest)
+            if dict1[letter] >= left:
+                left = dict1[letter] + 1
             dict1[letter] = right
-            current = right - left+1
-    longest = max(longest,current)
+            current = right - left + 1
+    longest = max(longest, current)
     return longest
 
-s = 'abcabcbb'
+
+s = "abcabcbb"
 print(lengthOfLongestSubstring(s))

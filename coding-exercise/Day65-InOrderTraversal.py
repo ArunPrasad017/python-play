@@ -20,6 +20,7 @@ class RecSolution:
         res = []
         return recurse(root, res)
 
+
 class NonRecSolution:
     def inOrder(root):
         if root is None:
@@ -30,7 +31,7 @@ class NonRecSolution:
         while True:
             if curr is not None:
                 stack.append(curr)
-                curr=curr.left
+                curr = curr.left
             elif stack:
                 curr = stack.pop()
                 lst.append(temp.val)

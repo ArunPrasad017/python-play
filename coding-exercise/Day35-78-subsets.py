@@ -7,18 +7,19 @@ Example:
 """
 from itertools import combinations
 
-#recursive
-def subset_recursive(nums,idx, res):
-    if idx == len(nums)-1:
+# recursive
+def subset_recursive(nums, idx, res):
+    if idx == len(nums) - 1:
         res.append([nums[idx]])
     else:
-        subset_recursive(nums,idx+1,res)
+        subset_recursive(nums, idx + 1, res)
         n = len(res)
         for i in range(n):
-            r=res[i]
-            r=r[:]
-            r.insert(0,nums[idx])
+            r = res[i]
+            r = r[:]
+            r.insert(0, nums[idx])
             res.append(r)
+
 
 def subsets(nums):
     # easy solution - using itertools
@@ -28,12 +29,12 @@ def subsets(nums):
     #     res+=val
     # return res
 
-    if len(nums)==0:
+    if len(nums) == 0:
         return []
     res = [[]]
-    subset_recursive(nums,0,res)
+    subset_recursive(nums, 0, res)
     return res
 
 
-nums = [1,2,3]
+nums = [1, 2, 3]
 print(subsets(nums))

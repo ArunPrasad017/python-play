@@ -10,13 +10,16 @@ Output: [2,3,5,4,1,7]
 Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
 
 """
-def shuffleArray(nums,n):
+
+
+def shuffleArray(nums, n):
     nums2 = []
-    for i in range(len(nums)-n):
+    for i in range(len(nums) - n):
         nums2.append(nums[i])
-        nums2.append(nums[i+n])
+        nums2.append(nums[i + n])
     return nums2
 
-nums = [2,5,1,3,4,7]
+
+nums = [2, 5, 1, 3, 4, 7]
 n = 3
 print(shuffleArray(nums))

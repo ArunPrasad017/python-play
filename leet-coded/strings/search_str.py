@@ -1,7 +1,7 @@
 # def suggestedProducts(products, searchWord):
 #     list_final = []
 #     products.sort()
-    
+
 #     for i,n in enumerate(searchWord):
 #         products=[p for p in products if len(p)>i and p[i]==n]
 #         list_final.append(products[:3])
@@ -11,10 +11,13 @@
 # searchWord = "mouse"
 # print(suggestedProducts(products,searchWord))
 import collections
+
+
 def topKFrequent(words, k):
     counter = collections.Counter(words)
-    output = sorted(counter.keys(), key = lambda x: (-counter[x],x) )
+    output = sorted(counter.keys(), key=lambda x: (-counter[x], x))
     return output
+
 
 words = ["i", "love", "leetcode", "i", "love", "coding"]
 k = 2

@@ -13,19 +13,23 @@ class RecSolution:
         if node.left:
             rec_preOrder(node.left, lst)
         if node.right:
-                rec_preOrder(node.right, lst)
+            rec_preOrder(node.right, lst)
+
     def preOrder(root):
         if root is None:
             return None
         res = []
-        return rec_predOrder(root,res)
+        return rec_predOrder(root, res)
+
 
 class NonRecSolution:
     def preOrder(root):
         if root is None:
             return None
         res = []
-        stack = [root,]
+        stack = [
+            root,
+        ]
         while stack:
             node = stack.pop()
             res.append(node.val)

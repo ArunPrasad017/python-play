@@ -52,13 +52,14 @@ TESTCASE 02
 """
 
 from collections import namedtuple
+
 N = int(input())
 fields = input().split()
-total_marks,count = 0,0
+total_marks, count = 0, 0
 for _ in range(N):
-    students = namedtuple('students',fields)
-    c1,c2,c3,c4=input().split()
-    student_row = students(c1,c2,c3,c4)
-    total_marks+=int(student_row.MARKS)
-    count+=1
-print(total_marks/N)
+    students = namedtuple("students", fields)
+    c1, c2, c3, c4 = input().split()
+    student_row = students(c1, c2, c3, c4)
+    total_marks += int(student_row.MARKS)
+    count += 1
+print(total_marks / N)

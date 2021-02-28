@@ -15,13 +15,14 @@ done for daily challenge
 #         self.val = val
 #         self.next = next
 
-def removeElements(head,val):
+
+def removeElements(head, val):
     sentinel = ListNode(0)
     sentinel.next = head
     curr = head
     prev = sentinel
     while curr is not None:
-        if curr.val==val:
+        if curr.val == val:
             prev.next = curr.next
         else:
             prev = curr

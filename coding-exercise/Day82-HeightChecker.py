@@ -12,14 +12,15 @@ On index 5 (0-based) we have 3 vs 4 so we have to move this student.
 
 """
 
+
 def heightChecker(arr):
     newArr = sorted(arr)
-    # alternate code 
+    # alternate code
     # cnt = 0
     # for i,j in zip(arr, newArr):
     #     if i!=j:
     #         cnt+=1
     # return cnt
-    
-    #one liner
-    return sum(1 for i,j in zip(arr, newArr) if i!=j)
+
+    # one liner
+    return sum(1 for i, j in zip(arr, newArr) if i != j)

@@ -23,17 +23,20 @@ Explanation: Both [2,1,3] and [3,1,2] can construct the secret signature "DI",
 but since we want to find the one with the smallest lexicographical permutation, you need to output [2,1,3]
 
 """
+
+
 def findPermutation(s):
-    res,stack = [], []
+    res, stack = [], []
     for i in range(len(s)):
-        stack.append(i+1)
-        if s[i]=='I':
+        stack.append(i + 1)
+        if s[i] == "I":
             while stack:
                 res.append(stack.pop())
-    res.append(len(s)+1)
+    res.append(len(s) + 1)
     while stack:
         res.append(stack.pop())
     return res
+
 
 s = "DIID"
 print(findPermutation(s))

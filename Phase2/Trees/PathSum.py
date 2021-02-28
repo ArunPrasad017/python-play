@@ -1,6 +1,6 @@
 def hasPathSumRec(node, tgt):
     res = False
-    tgt-=node.val
+    tgt -= node.val
     if node.left is None and node.right is None:
         return tgt == 0
     if node.left:
@@ -9,7 +9,8 @@ def hasPathSumRec(node, tgt):
         res = res or self.hasPathSumRec(node.right, tgt)
     return res
 
-def hasPathSum(tgt,root):
+
+def hasPathSum(tgt, root):
     if root is None:
         return None
     hasPathSumRec(root, tgt)

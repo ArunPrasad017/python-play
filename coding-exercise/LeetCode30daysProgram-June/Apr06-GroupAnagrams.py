@@ -13,6 +13,8 @@ Output:
         list: the list of common anagrams
 """
 from collections import defaultdict
+
+
 def groupAnagrams(strs):
     dict_combo = defaultdict(list)
     for i in range(len(strs)):
@@ -20,5 +22,6 @@ def groupAnagrams(strs):
         dict_combo[key].append(strs[i])
     return list(dict_combo.values())
 
-strs = ["eat","tea","tan","ate","nat","bat"]
+
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(groupAnagrams(strs))

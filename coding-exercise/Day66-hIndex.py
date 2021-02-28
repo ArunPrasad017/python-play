@@ -13,17 +13,19 @@ Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of 
              two with no more than 3 citations each, her h-index is 3.
 """
 
+
 def hIndex(lst):
     if not len(lst):
         return 0
     lst.sort(reverse=True)
     i = 0
     n = len(lst)
-    while i<n and i<lst[i]:
-        i+=1
+    while i < n and i < lst[i]:
+        i += 1
     return i
 
-print(hIndex([3,0,6,1,5]))
+
+print(hIndex([3, 0, 6, 1, 5]))
 print(hIndex([0]))
 print(hIndex([1]))
 print(hIndex([]))

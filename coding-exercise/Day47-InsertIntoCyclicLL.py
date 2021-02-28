@@ -25,28 +25,28 @@ Explanation: The list is empty (given head is null). We create a new single circ
 #         self.val = val
 #         self.next = next
 
+
 def insert(head, insertVal):
 
     # case1 where the head is none
     if head is None:
-        node  = ListNode(insertVal)
+        node = ListNode(insertVal)
         node.next = node
         return node
     maximum = head
 
-    # case 2 
-    while maximum!=head and maximum.val<=insertVal:
+    # case 2
+    while maximum != head and maximum.val <= insertVal:
         maximum = maximum.next
     minimum = maximum.next
     cur = minimum
 
-    if insertVal>=maximum.val or insertVal<=minimum.val:
-        node = ListNode(insertVal,minimum)
+    if insertVal >= maximum.val or insertVal <= minimum.val:
+        node = ListNode(insertVal, minimum)
         node.next = maximum
     else:
-        while cur.next.val <=insertVal:
+        while cur.next.val <= insertVal:
             cur = cur.next
-        node = ListNode(insertVal,cur.next)
+        node = ListNode(insertVal, cur.next)
         cur.next = node
     return head
-        

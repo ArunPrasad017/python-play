@@ -14,20 +14,22 @@ The input array will only contain 0 and 1.
 The length of input array is a positive integer and will not exceed 10,000
 """
 
+
 def findMaxConsecutiveOnes(nums):
     # sliding window concept with arrays
-    zeroCnt,start,end = 0,0,0
+    zeroCnt, start, end = 0, 0, 0
     max_ones = 0
     for end in range(len(nums)):
-        if nums[end]==0:
-            zeroCnt+=1
-        while zeroCnt>1:
-            if nums[start]==0:
-                zeroCnt-=1
-            start+=1
-        max_ones = max(max_ones, end-start+1)
+        if nums[end] == 0:
+            zeroCnt += 1
+        while zeroCnt > 1:
+            if nums[start] == 0:
+                zeroCnt -= 1
+            start += 1
+        max_ones = max(max_ones, end - start + 1)
     return max_ones
 
+
 # driver code
-nums = [1,1,0,0,1,1,1,1,1,1]
+nums = [1, 1, 0, 0, 1, 1, 1, 1, 1, 1]
 print(findMaxConsecutiveOnes(nums))

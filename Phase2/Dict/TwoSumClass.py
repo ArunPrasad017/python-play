@@ -1,10 +1,9 @@
 class TwoSum:
-    
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.lst =[]
+        self.lst = []
         self.map = {}
 
     def add(self, number: int) -> None:
@@ -12,8 +11,7 @@ class TwoSum:
         Add the number to an internal data structure..
         """
         self.lst.append(number)
-        self.map[number]=len(self.lst)-1
-        
+        self.map[number] = len(self.lst) - 1
 
     def find(self, value: int) -> bool:
         """
@@ -21,11 +19,12 @@ class TwoSum:
         """
         for i in range(len(self.lst)):
             rem = value - (self.lst[i])
-            if rem in self.map and i!=self.map[rem]:
+            if rem in self.map and i != self.map[rem]:
                 return True
         return False
-        
-res =[]
+
+
+res = []
 res.insert()
 
 # Your TwoSum object will be instantiated and called as such:

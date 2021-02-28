@@ -21,6 +21,8 @@ Given a binary tree, return the level order traversal of its nodes' values. (ie,
 #         self.left = left
 #         self.right = right
 from collections import deque
+
+
 def levelOrderTraversal(root):
     if root is None:
         return None
@@ -38,5 +40,5 @@ def levelOrderTraversal(root):
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-        level+=1
+        level += 1
     return res

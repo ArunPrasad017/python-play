@@ -8,12 +8,15 @@ Example 1:
 Input: [2,2,1]
 Output: 1
 """
+
+
 def singleNumber(nums):
     # use of exor operation helps in determining the unique values and it reverses the numbers based on digits
     a = 0
     for num in nums:
-        a^=num
+        a ^= num
     return a
 
-nums = [1,1,2]
+
+nums = [1, 1, 2]
 print(singleNumber(nums))

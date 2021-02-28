@@ -5,18 +5,19 @@
 #     self.value = x
 #     self.left = None
 #     self.right = None
-def inorderRec(node,lst):
+def inorderRec(node, lst):
     if node.left:
         inorderRec(node.left, lst)
     if node is not None:
         lst.append(node.value)
     if node.right:
-        inorderRec(node.right,lst)
+        inorderRec(node.right, lst)
     return lst
-        
+
+
 def kthSmallestInBST(t, k):
-    if t is None or k<1:
+    if t is None or k < 1:
         return 0
     # inorder traversal
-    lst = inorderRec(t,[])
-    return lst[k-1]
+    lst = inorderRec(t, [])
+    return lst[k - 1]

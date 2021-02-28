@@ -12,13 +12,14 @@ makeArrayConsecutive2(statues) = 3.
 Ratiorg needs statues of sizes 4, 5 and 7.
 """
 
+
 def makeArrayConsecutive2(statues):
     res = 0
     if not statues:
         return res
     statues.sort()
     print(statues)
-    for i in range(len(statues)-1):
-        if (statues[i]+1)!=statues[i+1]:
-            res+= (statues[i+1] - statues[i])-1
+    for i in range(len(statues) - 1):
+        if (statues[i] + 1) != statues[i + 1]:
+            res += (statues[i + 1] - statues[i]) - 1
     return res

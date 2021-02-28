@@ -18,6 +18,7 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 #         self.left = left
 #         self.right = right
 
+
 def sumLeftLeavesRec(node, isLeft):
     if node.left is None and node.right is None:
         if isLeft:
@@ -27,13 +28,13 @@ def sumLeftLeavesRec(node, isLeft):
     else:
         total = 0
         if node.left:
-            total+=sumLeftLeavesRec(node.left, True)
+            total += sumLeftLeavesRec(node.left, True)
         else:
-            total+=sumLeftLeavesRec(node.right, False)
+            total += sumLeftLeavesRec(node.right, False)
     return total
 
-        
+
 def sumLeftLeaves(root):
     if root is None:
-        return 0 
+        return 0
     sumLeftLeavesRec(root, False)

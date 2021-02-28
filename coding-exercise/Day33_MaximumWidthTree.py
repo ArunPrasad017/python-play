@@ -1,4 +1,5 @@
 from collections import deque
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -6,18 +7,20 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 # breadth first search level order traversal
 def levelOrder(node):
     if node is None:
         return
     q = deque([node])
-    while len(q)>0:
-        n=q.pop()
+    while len(q) > 0:
+        n = q.pop()
         print(n.val)
         if n.left is not None:
             q.appendleft(n.left)
         if n.right is not None:
             q.appendleft(n.right)
+
 
 # def levelOrderSameLine(node):
 #     if node is None:
@@ -59,22 +62,23 @@ def levelOrder(node):
 def levelOrderWidth(root):
     if root is None:
         return 0
-    res=1
-    q = [[root,0]]
-    while len(q)>0:
+    res = 1
+    q = [[root, 0]]
+    while len(q) > 0:
         count = len(q)
         start_idx = q[0][1]
         end_idx = q[-1][1]
-        res = max(res,end_idx-start_idx+1)
+        res = max(res, end_idx - start_idx + 1)
         for i in range(count):
-            p=q[0]
-            idx=p[1]-start_idx
+            p = q[0]
+            idx = p[1] - start_idx
             q.pop(0)
             if p[0].left is not None:
-                q.append([p[0].left,2*idx+1])
+                q.append([p[0].left, 2 * idx + 1])
             if p[0].right is not None:
-                q.append([p[0].right,2*idx+2])
+                q.append([p[0].right, 2 * idx + 2])
     return res
+
 
 if __name__ == "__main__":
     root = TreeNode(5)
