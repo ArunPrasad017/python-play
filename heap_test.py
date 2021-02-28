@@ -11,8 +11,8 @@ def min_heapify(array, i):
         array[i], array[smallest] = array[smallest], array[i]
         min_heapify(array, smallest)
 
-def ()
 
+# def ()
 def build_min_heap(array):
     for i in reversed(range(len(array)//2)):
         min_heapify(array, i)
