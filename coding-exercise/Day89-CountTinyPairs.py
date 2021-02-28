@@ -31,12 +31,8 @@ There are 4 tiny pairs during the iteration, so the answer is 4.
 """
 
 def countTinyPairs(a, b, k):
-    count = 0
     b[:]=b[::-1]
-    for i,j in zip(a,b):
-        if int(str(i)+str(j)) <k:
-            count+=1
-    return count
+    return sum(1 for i,j in zip(a,b) if int(str(i)+str(j)) <k)
 
 # 2 lines
 def countTinyPairs2(a, b, k):

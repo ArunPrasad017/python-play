@@ -55,17 +55,17 @@ class Hashmap:
         return None
 
     def addToKey(self,val):
-        for i in range(len(self.map)):
-            if self.map[i]:
-                print(self.map[i][0][0])
-                self.map[i][0][0]+=val
+        for item in self.map:
+            if item:
+                print(item[0][0])
+                item[0][0] += val
         return "Key updates done"
     
     def addToValue(self,val):
-        for i in range(len(self.map)):
-            if self.map[i]:
-                print(self.map[i][0][1])
-                self.map[i][0][1]+=val
+        for item in self.map:
+            if item:
+                print(item[0][1])
+                item[0][1] += val
         return "Key updates done"
     
     def printf(self):
