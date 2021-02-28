@@ -21,11 +21,10 @@ class Board:
                 print('-----')
 
     def update_cell(self,cell_num,player):
-        if cell_num < 10:
-            r = (cell_num-1)//3
-            c = (cell_num-1)%3
-        else:
+        if cell_num >= 10:
             raise Exception("Number not valid")
+        r = (cell_num-1)//3
+        c = (cell_num-1)%3
         if self.cells[r][c]==" ":
             self.cells[r][c] = player
             if self.is_winner(r,c):
