@@ -1,0 +1,212 @@
+Given an integer n and an array a of length n, your task is to apply the following mutation to a:
+
+Array a mutates into a new array b of length n.
+For each i from 0 to n - 1, b[i] = a[i - 1] + a[i] + a[i + 1].
+If some element in the sum a[i - 1] + a[i] + a[i + 1] does not exist, it should be set to 0. For example, b[0] should be equal to 0 + a[0] + a[1].
+Example
+
+For n = 5 and a = [4, 0, 1, -2, 3], the output should be mutateTheArray(n, a) = [4, 5, -1, 2, 1].
+
+b[0] = 0 + a[0] + a[1] = 0 + 4 + 0 = 4
+b[1] = a[0] + a[1] + a[2] = 4 + 0 + 1 = 5
+b[2] = a[1] + a[2] + a[3] = 0 + 1 + (-2) = -1
+b[3] = a[2] + a[3] + a[4] = 1 + (-2) + 3 = 2
+b[4] = a[3] + a[4] + 0 = (-2) + 3 + 0 = 1
+So, the resulting array after the mutation will be [4, 5, -1, 2, 1]
+
+Errors:
+
+-- list index out of range
+
+sol:
+def mutateTheArray(n, a):
+    b = []
+    if len(a)==1:
+        return a
+    for i in range(0,len(a)):
+        if i==0:
+            b.append(a[i]+a[i+1])
+        elif(i==(len(a)-1)):
+            b.append(a[i-1]+a[i])
+        else:
+            b.append(a[i-1]+a[i]+a[i+1])
+    return b
+------------------------------------------------------------------------------------------------------------------------------------------------
+You are given two arrays of integers a and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y), where x is from a and y is from b. Such a pair is called tiny if the concatenation xy is strictly less than k.
+
+Your task is to return the number of tiny pairs that you'll encounter during the simultaneous iteration through a and b.
+
+Example
+
+For a = [1, 2, 3], b = [1, 2, 3], and k = 31, the output should be
+countTinyPairs(a, b, k) = 2.
+
+We're considering the following pairs during iteration:
+
+(1, 3). Their concatenation equals 13, which is less than 31, so the pair is tiny;
+(2, 2). Their concatenation equals 22, which is less than 31, so the pair is tiny;
+(3, 1). Their concatenation equals 31, which is not less than 31, so the pair is not tiny.
+As you can see, there are 2 tiny pairs during the iteration, so the answer is 2.
+
+For a = [16, 1, 4, 2, 14], b = [7, 11, 2, 0, 15], and k = 743, the output should be
+countTinyPairs(a, b, k) = 4.
+
+We're considering the following pairs during iteration:
+
+(16, 15). Their concatenation equals 1615, which is greater than 743, so the pair is not tiny;
+(1, 0). Their concatenation equals 10, which is less than 743, so the pair is tiny;
+(4, 2). Their concatenation equals 42, which is less than 743, so the pair is tiny.
+(2, 11). Their concatenation equals 211, which is less than 743, so the pair is tiny;
+(14, 7). Their concatenation equals 147, which is less than 743, so the pair is tiny.
+There are 4 tiny pairs during the iteration, so the answer is 4.
+
+
+Sol:
+def countTinyPairs(a, b, k):
+    count = 0
+    b[:]=b[::-1]
+    for i,j in zip(a,b):
+        if int(str(i)+str(j)) <k:
+            count+=1
+    return count
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+You are implementing your own programming language and you've decided to add support for merging strings. A typical merge function would take two strings s1 and s2, and return the lexicographically smallest result that can be obtained by placing the symbols of s2 between the symbols of s1 in such a way that maintains the relative order of the characters in each string.
+
+For example, if s1 = "super" and s2 = "tower", the result should be merge(s1, s2) = "stouperwer".
+
+
+
+You'd like to make your language more unique, so for your merge function, instead of comparing the characters in the usual lexicographical order, you'll compare them based on how many times they occur in their respective strings (fewer occurrences means the character is considered smaller). If the number of occurrences are equal, then the characters should be compared in the usual way. If both number of occurences and characters are equal, you should take the characters from the first string to the result.
+
+Given two strings s1 and s2, return the result of the special merge function you are implementing.
+
+Example
+
+For s1 = "dce" and s2 = "cccbd", the output should be
+mergeStrings(s1, s2) = "dcecccbd".
+All symbols from s1 goes first, because all of them have only 1 occurrence in s1 and c has 3 occurrences in s2.
+
+
+
+For s1 = "super" and s2 = "tower", the output should be
+mergeStrings(s1, s2) = "stouperwer".
+Because in both strings all symbols occur only 1 time, strings are merged as usual. You can find explanation for this example on the image in the description.
+
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+
+[input] string s1
+
+A string consisting only of lowercase English letters.
+
+Guaranteed constraints:
+1 ≤ s1.length ≤ 104.
+
+[input] string s2
+
+A string consisting only of lowercase English letters.
+
+Guaranteed constraints:
+1 ≤ s2.length ≤ 104.
+
+[output] string
+
+The string that results by merging s1 and s2 using your special merge function.
+
+
+
+sol:
+from collections import Counter
+def mergeStrings(s1, s2):
+    dict1 = Counter()
+    dict2 = Counter()
+    res = ""
+    ptr1, ptr2 = 0,0
+    for c in s1:
+        dict1[c]+=1
+    for c in s2:
+        dict2[c]+=1
+    while ptr1<=len(s1)-1 and ptr2<=len(s2)-1:
+        if (dict1[s1[ptr1]] < dict2[s2[ptr2]]):
+            res+=str(s1[ptr1])
+            ptr1+=1
+        elif (dict1[s1[ptr1]] > dict2[s2[ptr2]]):
+            res+=str(s2[ptr2])
+            ptr2+=1
+        elif (ord(s1[ptr1]) <= ord(s2[ptr2])) and (dict1[s1[ptr1]] == dict2[s2[ptr2]]):
+            res+=str(s1[ptr1])
+            ptr1+=1
+        elif (ord(s1[ptr1]) > ord(s2[ptr2])) and (dict1[s1[ptr1]] == dict2[s2[ptr2]]):
+            res+=str(s2[ptr2])
+            ptr2+=1
+    if ptr2!=len(s2)-1 or len(s2)==1:
+        res+=str(s2[ptr2:])
+    if ptr1!=len(s1)-1 or len(s1)==1:
+        res+=str(s1[ptr1:])
+    return res
+------------------------------------------------------------------------------------------------------------------------------------------------
+You've created a new programming language, and now you've decided to add hashmap support to it. Actually you are quite disappointed that in common programming languages it's impossible to add a number to all hashmap keys, or all its values. So you've decided to take matters into your own hands and implement your own hashmap in your new language that has the following operations:
+
+insert x y - insert an object with key x and value y.
+get x - return the value of an object with key x.
+addToKey x - add x to all keys in map.
+addToValue y - add y to all values in map.
+To test out your new hashmap, you have a list of queries in the form of two arrays: queryTypes contains the names of the methods to be called (eg: insert, get, etc), and queries contains the arguments for those methods (the x and y values).
+
+Your task is to implement this hashmap, apply the given queries, and to find the sum of all the results for get operations.
+
+Example
+
+For queryType = ["insert", "insert", "addToValue", "addToKey", "get"] and query = [[1, 2], [2, 3], [2], [1], [3]], the output should be hashMap(queryType, query) = 5.
+
+The hashmap looks like this after each query:
+
+1 query: {1: 2}
+2 query: {1: 2, 2: 3}
+3 query: {1: 4, 2: 5}
+4 query: {2: 4, 3: 5}
+5 query: answer is 5
+The result of the last get query for 3 is 5 in the resulting hashmap.
+
+
+
+def insert(dict1,lst):
+    dict1[lst[0]] = lst[1]
+    return dict1
+
+def addToValue(dict1,val):
+    for k,v in dict1.items():
+        dict1[k] = (dict1.get(k),0)+val
+    return dict1
+
+def addToKey(dict1,val):
+    dict2 ={}
+    for k,v in dict1.items():
+        dict2[k+val] = v
+    return dict2
+
+def get(dict1, key):
+    if key in dict1:
+        return dict1[key]
+    else:
+        return None
+    
+def hashMap(queryType, query):
+    dict1 = {}
+    for action,val in zip(queryType,query):
+        if action=="insert":
+            dict1 = insert(dict1, val)
+        if action=="addToValue":
+            dict1 = addToValue(dict1,val)
+        if action=="addToKey":
+            dict1 = addToValue(dict1,val)
+        if action=="get":
+            print(get(dict1,key)) 
+    return dict1
+
+
+
+
