@@ -72,9 +72,7 @@ def count(lst):
     #         cntr+=1
     # return cntr
     return sum(
-        1
-        for item in lst
-        if 'success' in item.keys() and item['success'] == True
+        'success' in item.keys() and item['success'] == True for item in lst
     )
 
 # create an nested dictionary from the keys
