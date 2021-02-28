@@ -7,9 +7,7 @@
 class Solution:
     def recur(self,node):
         def hasChild(node):
-            if node.left or node.right:
-                return True
-            return False     
+            return bool(node.left or node.right)     
         if node.left is None and node.right is None:
             self.count+=1
             return self.count
