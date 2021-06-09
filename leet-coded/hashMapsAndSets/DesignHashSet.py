@@ -23,9 +23,7 @@ class MyHashSet:
         """
         Returns true if this set contains the specified element
         """
-        if key in self.hash_set:
-            return True
-        return False
+        return key in self.hash_set
         
 
 
