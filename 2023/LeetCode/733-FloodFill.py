@@ -5,16 +5,17 @@ def floodfill(image, sr, sc, newColor):
         return image
 
     def dfs(r, c):
-        if image[r][c] == color:
-            image[r][c] = newColor
-            if r >= 1:
-                dfs(r - 1, c)
-            if r + 1 < rows:
-                dfs(r + 1, c)
-            if c >= 1:
-                dfs(r, c - 1)
-            if c + 1 < column:
-                dfs(r, c + 1)
+        if image[r][c] != color:
+            return
+        image[r][c] = newColor
+        if r >= 1:
+            dfs(r - 1, c)
+        if r + 1 < rows:
+            dfs(r + 1, c)
+        if c >= 1:
+            dfs(r, c - 1)
+        if c + 1 < column:
+            dfs(r, c + 1)
 
     dfs(sr, sc)
     return image
